@@ -1,0 +1,4 @@
+This repository is for sharing code for processing the released traces.
+
+Each contributed set of code should get its own subdirectory, preferably
+named after its contributers.
