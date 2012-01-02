@@ -1,0 +1,7 @@
+#!/bin/bash
+set -x
+FILES=`echo lib/elephant-bird-*.jar`
+for f in elephant-bird-libs/*.jar; do
+    FILES="$FILES:$f"
+done
+/usr/bin/java -cp "$FILES" com.twitter.elephantbird.proto.HadoopProtoCodeGenerator config-twadoop.yml -

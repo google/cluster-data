@@ -1,0 +1,67 @@
+// General format notes:
+//   all timestamps are normalized so they can be represented as signed longs,
+//   with values greater than LONG_MAX mapped to LONG_MAX
+
+package amplab.googletrace;
+
+import "trace.proto";
+
+option java_outer_classname = "TraceUtil";
+
+message JobUtilization {
+  required JobInfo job_info = 1;
+  repeated TaskInfo task_samples = 2;
+  optional int32 num_tasks = 3;
+  optional Resources min_request = 4;
+  optional Resources max_request = 5;
+
+  // percentile of percentile per-task usage
+  repeated float task_percentile = 8;
+  repeated float usage_percentile = 9;
+  repeated Resources percentile_task_usage = 10;
+  repeated Resources percentile_mean_task_usage = 11;
+
+  optional int64 start_time = 12;
+  optional int64 end_time = 13;
+  optional int64 running_time = 14;
+
+  repeated int32 num_tasks_final = 15;
+  repeated int32 num_events_by_type = 16;
+}
+
+message UsageByMachine {
+  required int64 start_time = 1;
+  required int64 end_time = 2;
+
+  repeated TaskUsage components = 3;
+  repeated TaskUsageWithAvg components_with_avg = 6;
+  
+  optional Resources resources = 4;
+  optional MachineInfo info = 5;
+  // Next available number: 7
+}
+
+message TaskUtilization {
+  required TaskInfo info = 1;
+  repeated TaskInfo task_samples = 2;
+  
+  optional Resources min_request = 3;
+  optional Resources max_request = 4;
+  
+  repeated float usage_percentile = 5;
+  repeated Resources percentile_task_usage = 6;
+  repeated Resources percentile_mean_task_usage = 7;
+
+  optional int64 start_time = 8;
+  optional int64 end_time = 9;
+  optional int64 running_time = 10;
+  // TODO runtime, etc.
+}
+
+message TaskUsageWithAvg {
+  optional TaskUsage usage = 1;
+  optional TaskUtilization task = 2;
+  optional JobUtilization job = 3;
+
+  optional TaskEvent next_death = 4;
+}

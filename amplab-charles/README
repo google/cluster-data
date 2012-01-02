@@ -1,0 +1,39 @@
+What is this?
+
+  Tools for converting the Google trace to LZO compressed protobuf files
+  (for which Twitter's Elephant Bird has Hadoop input/output formats).
+  
+  Some tools for doing possibly interesting joins of that data in Spark.
+
+  The ability to run an interactive spark shell against the trace data.
+
+To build:
+
+  Dependencies: 
+    You will need scala-build-tool.
+    
+    If you aren't using 64-bit Linux JVM, you will need to get versions of
+    everything in native-lib-Linux-amd64.
+
+    You will need the 'protoc' binary installed somewhere.
+
+    Get spark from github.com/mesos/spark;
+    build it with sbt/sbt publish-local
+
+  Copy and customize project/Local.scala.example to project/Local.scala
+  The only mandatory piece is specifying the directories. You can use HDFS
+  paths.
+
+  Copy and customize spark-home/spark-executor.
+
+  sbt test mklauncher
+
+To run:
+
+  # start a Mesos cluster
+  export MASTER='mesos://master@MACHINE-WHERE-MESOS-MASTER-RUNS:port/'
+  target/scala-sbt spark.repl.Main
+  [at the scala> prompt] :l scripts/some-script.scala
+  (or other scala commands)
+
+You should start with the 'import.scala' script.

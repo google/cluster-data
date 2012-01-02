@@ -1,0 +1,23 @@
+import sbt._
+import Keys._
+import sbtprotobuf.{ProtobufPlugin=>PB}
+
+object LocalBuild extends Build {
+  override lazy val settings = super.settings ++ Seq(
+    javaOptions ++= Seq(
+      "-Dtrace.in.directory=/work/charles/clusertrace3",
+      "-Dtrace.processed.directory=/work/charles/clustertrace-resharded",
+      "-Dspark.diskSpillingCache.cacheDir=/itch/charles-tmp",
+      "-Dspark.boundedMemoryCache.memoryFraction=0.30",
+      "-Dspark.default.parallelism=100",
+      "-Dspark.local.dir=/scratch/charles-tmp",
+      "-Dspark.dfs.workDir=/work/charles/spark-dfs",
+      "-Dspark.mem=3000m",
+      "-Xmx3700m", "-Xms2000m"
+    ), 
+    PB.protoc in PB.protobufConfig := ("./protoc " +
+          "--plugin=protoc-gen-twadoop=./protoc-gen-twadoop " +
+          "--twadoop_out=target/scala-2.9.1/src_managed/main/" +
+              "compiled_protobuf")
+  )
+}

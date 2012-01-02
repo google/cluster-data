@@ -1,0 +1,16 @@
+trace:
+  - com.twitter.elephantbird.proto.codegen.DeprecatedLzoProtobufBlockInputFormatGenerator
+  - com.twitter.elephantbird.proto.codegen.LzoProtobufB64LineInputFormatGenerator
+  - com.twitter.elephantbird.proto.codegen.LzoProtobufB64LineOutputFormatGenerator
+  - com.twitter.elephantbird.proto.codegen.LzoProtobufBlockInputFormatGenerator
+  - com.twitter.elephantbird.proto.codegen.LzoProtobufBlockOutputFormatGenerator
+  - com.twitter.elephantbird.proto.codegen.LzoProtobufHiveSerdeGenerator  
+  - com.twitter.elephantbird.proto.codegen.ProtobufWritableGenerator
+util:
+  - com.twitter.elephantbird.proto.codegen.DeprecatedLzoProtobufBlockInputFormatGenerator
+  - com.twitter.elephantbird.proto.codegen.LzoProtobufB64LineInputFormatGenerator
+  - com.twitter.elephantbird.proto.codegen.LzoProtobufB64LineOutputFormatGenerator
+  - com.twitter.elephantbird.proto.codegen.LzoProtobufBlockInputFormatGenerator
+  - com.twitter.elephantbird.proto.codegen.LzoProtobufBlockOutputFormatGenerator
+  - com.twitter.elephantbird.proto.codegen.LzoProtobufHiveSerdeGenerator  
+  - com.twitter.elephantbird.proto.codegen.ProtobufWritableGenerator
