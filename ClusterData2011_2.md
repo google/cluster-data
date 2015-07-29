@@ -78,3 +78,7 @@ cycle counter and instruction counter not being read at the same time. To obtain
 useful data from these measurements, we suggest filtering out measurements
 representing a very small amount of CPU time and measurements with unreasonable
 CPI and MAI values.
+
+# Questions?
+
+Please send email to

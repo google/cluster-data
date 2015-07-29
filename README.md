@@ -1,4 +1,4 @@
-This project describes various traces that provide information Google cluster management.
+Various traces from parts of Google cluster management software and systems.
 
 # Cluster workload traces
 These are traces of workloads running on Google compute cells.
