@@ -1,3 +1,0 @@
-export MASTER='mesos://master@r30:60060/'
-exec ./target/scala-sbt spark.repl.Main
-
