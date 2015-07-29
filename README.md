@@ -3,9 +3,9 @@ This project describes various traces that provide information Google cluster ma
 # Cluster workload traces
 These are traces of workloads running on Google compute cells.
 
-  * [ClusterData2011\_2.md] provides data from an 12.5k-machine cell over about a month-long period in May 2011.
-  * [TraceVersion1.md] is a short trace that describes a 7 hour period from one cell (cluster).
-  * A [bibliography.bib] of related work provides bibtex data for papers about or derived from these traces.
+  * [ClusterData2011\_2.md](ClusterData2011_2.md) provides data from an 12.5k-machine cell over about a month-long period in May 2011.
+  * [TraceVersion1.md](TraceVersion1.md) is a short trace that describes a 7 hour period from one cell (cluster).
+  * A [bibliography](bibliography.bib) of related work provides bibtex data for papers about or derived from these traces.
 
 # ETA traces
 

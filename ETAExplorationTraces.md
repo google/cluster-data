@@ -15,7 +15,7 @@ real-world exploratory test runs.
 
 You can find the traces
 [here](http://commondatastorage.googleapis.com/clusterdata-misc/ETA-traces.tar.gz).
-(SHA1 checksum](http://en.wikipedia.org/wiki/SHA-1#Data_Integrity):
+([SHA1 checksum](http://en.wikipedia.org/wiki/SHA-1#Data_Integrity):
 6664e43caa1bf1f4c0af959fe93d266ead24d234.)
 
 # Format
@@ -32,11 +32,11 @@ structure and application of the state space reduction in ETA read our
 An exploration trace contains a sequence of events that detail the
 exploration. Each event can be one of the following:
 
- * `AddNode x y` -- A node `x` with parent `y` has been added (the parent of the root is -1).
- * `Explore x` -- The node `x` has been marked for further exploration.
- * `Transition x` -- The exploration transitioned from the current node to node `x`.
- * `Start` -- New test execution (starting from node 0) has been initiated.
- * `End t` -- Current test execution finished after `t` time units.</li></ul>
+ * `AddNode x y` -- a node `x` with parent `y` has been added (the parent of the root is -1)
+ * `Explore x` -- the node `x` has been marked for further exploration
+ * `Transition x` -- the exploration transitioned from the current node to node `x`
+ * `Start` -- new test execution (starting from node 0) has been initiated
+ * `End t` -- current test execution finished after `t` time units.
 
 A well-formed trace contains a number of executions, each starting with `Start`
 and ending with `End t`. Each execution explores a branch of the execution tree,
@@ -57,7 +57,7 @@ These are all provided in a single compressed tar file (see above for the link).
    Omega tests that evaluate interactions of `X` users issuing concurrent
    scheduling requests.
  * `tlp.trace`: The `tlp` test is representative of a class of Omega tests that
-   do scheduling work.</li></ul>
+   do scheduling work.
 
 # Notes
 
@@ -67,6 +67,8 @@ of any papers you publish that use it.
 
 Questions?  Send us email!
 
-Jiri Simsa `<jsimsa@google.com>`, john wilkes `<johnwilkes@google.com>`
+  Jiri Simsa jsimsa@google.com, john wilkes johnwilkes@google.com
+
+--------------------------------------
 
 _Version of: 2012-09-26; revised 2015-07-29_

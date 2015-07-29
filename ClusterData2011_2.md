@@ -1,4 +1,6 @@
-_John Wilkes and Charles Reiss._<br>Copyright © 2011,2014 Google Inc. All rights reserved.<br>
+# ClusterData2011\_2 traces
+
+_John Wilkes and Charles Reiss._
 
 The `clusterdata-2011-2` trace represents 29 day's worth of cell information
 from May 2011, on a cluster of about 12.5k machines.
@@ -17,7 +19,7 @@ the datacenter is in that timezone (US Eastern).  This corresponds to a trace
 timestamp of 600s; see the data schema documentation for why.
 
 The trace is described in the trace-data
-[v2.1 format + schema document]((https://drive.google.com/open?id=0B5g07T_gRDg9Z0lsSTEtTWtpOW8&authuser=0).
+[v2.1 format + schema document](https://drive.google.com/open?id=0B5g07T_gRDg9Z0lsSTEtTWtpOW8&authuser=0).
 
 Priorities in this trace range from 0 to 11 inclusive; bigger numbers mean "more
 important". 0 and 1 are “free” priorities; 9, 10, and 11 and “production”
@@ -33,7 +35,7 @@ utilization over time for long-running tasks.
 ## Downloading the trace
 
 Download instructions for the trace are in the
-[v2.1 format + schema document]((https://drive.google.com/open?id=0B5g07T_gRDg9Z0lsSTEtTWtpOW8&authuser=0).
+[v2.1 format + schema document](https://drive.google.com/open?id=0B5g07T_gRDg9Z0lsSTEtTWtpOW8&authuser=0).
 
 The trace is stored in
 [Google Storage for Developers](https://developers.google.com/storage/) in the
@@ -63,7 +65,7 @@ majority of cases: typically because the job is started but its tasks are
 disabled for its entire duration.
 
 Approximately 0.013% of task events and 0.0008% of job events in this trace have
-a non-empty missing info field.<br>
+a non-empty missing info field.
 
 We estimate that less than 0.05% of job and task scheduling event records are
 missing and less than 1% of resource usage measurements are missing.
