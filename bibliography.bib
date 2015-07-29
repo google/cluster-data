@@ -1,19 +1,27 @@
-# Introduction #
+################################################################
+# Introduction
+################################################################
 
-This bibliography is intended as a resource for people writing papers that refer to the
-Google cluster traces.  It is intended to cover papers that analyze the traces,
-as well as ones that use them as inputs to other studies.
+This bibliography is intended as a resource for people writing papers that refer
+to the Google cluster traces.  It is intended to cover papers that analyze the
+traces, as well as ones that use them as inputs to other studies.
 
-  * It's recommended to `\usepackage{url`}.
+  * I recommend using \usepackage{url}.
   * Entries are in publication-date order, with the most recent at the top.
-  * Items in **bold** are the recommended citations.
-  * Bibtex ignores stuff that is outside the entries, so it's safe to copy and save the entire contents as a .bib file.
+  * Bibtex ignores stuff that is outside the entries, so text like this is safe.
 
-# Trace-announcements #
+The following are the RECOMMENDED CITATIONS if you just need the basics:
+
+  1. \cite{clusterdata:Wilkes2011, clusterdata:Reiss2011} for the "full"
+     ClusterTrace2011 trace.
+  2. \cite{clusterdata:Reiss2012b} for the first thorough analysis of it.
+  
+################################################################
+# Trace-announcements
+################################################################
 
 These entries can be used to cite the traces themselves.
 The first couple are for the May 2011 "full" trace.
-```
 @Misc{clusterdata:Wilkes2011,
   author = {John Wilkes},
   title = {More {Google} cluster data},
@@ -23,9 +31,7 @@ The first couple are for the May 2011 "full" trace.
   note = {Posted at
 	\url{http://googleresearch.blogspot.com/2011/11/more-google-cluster-data.html}.},
 }
-```
 
-```
 @TechReport{clusterdata:Reiss2011,
   author = {Charles Reiss and John Wilkes and Joseph L. Hellerstein},
   title = {{Google} cluster-usage traces: format + schema},
@@ -37,10 +43,12 @@ The first couple are for the May 2011 "full" trace.
   note = {Revised 2012.03.20.  Posted at
 	\url{http://code.google.com/p/googleclusterdata/wiki/TraceVersion2}},
 }
-```
 
-The second one is for the earlier "small" 7-hour trace.
-```
+
+#----------------
+# The next one is for the earlier "small" 7-hour trace.  
+# (Most people should not be using this.)
+
 @Misc{clusterdata:Hellersetein2010,
   author = {Joseph L. Hellerstein},
   title = {{Google} cluster data},
@@ -49,11 +57,11 @@ The second one is for the earlier "small" 7-hour trace.
   year = 2010,
   note = {Posted at \url{http://googleresearch.blogspot.com/2010/01/google-cluster-data.html}.},
 }
-```
 
+#----------------
 The next paper describes the policy choices and technologies used to
 make the traces safe to release.
-```
+
 @InProceedings{clusterdata:Reiss2012,
   author = {Charles Reiss and John Wilkes and Joseph L. Hellerstein},
   title = {Obfuscatory obscanturism: making workload traces of
@@ -82,15 +90,20 @@ make the traces safe to release.
 	workload on a 11k-machine cluster.},
   url = {http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6212064},
 }
-```
 
-# Trace-analysis papers #
+################################################################
+# Trace-analysis papers
+################################################################
 
 These papers are primarily about analyzing the traces.
-**If you just want one citation, then `\cite{clusterdata:Reiss2012b}` is recommended.**
 Order: most recent first.
 
-```
+If you just want one citation about the Cluster2011 trace, then 
+use \cite{clusterdata:Reiss2012b}.
+
+
+################ 2014
+
 @INPROCEEDINGS{clusterdata:Abdul-Rahman2014,
   author = {Abdul-Rahman, Omar Arif and Aida, Kento},
   title = {Towards understanding the usage behavior of {Google} cloud
@@ -126,9 +139,9 @@ Order: most recent first.
 	the heterogeneous structure of the Google cloud workload.},
   doi = {10.1109/CloudCom.2014.75},
 }
-```
 
-```
+################ 2013
+
 @inproceedings{clusterdata:Di2013,
   title = {Characterizing cloud applications on a {Google} data center},
   author = {Di, Sheng and Kondo, Derrick and Franck, Cappello},
@@ -152,9 +165,9 @@ Order: most recent first.
 	believe our work is very interesting and valuable for the
 	further investigation of Cloud environment.},
 }
-```
 
-```
+################ 2012
+
 @INPROCEEDINGS{clusterdata:Reiss2012b,
   title = {Heterogeneity and dynamicity of clouds at scale: {Google}
 	trace analysis},
@@ -187,9 +200,7 @@ Order: most recent first.
 	and included here as clusterdata:Reiss2012a. Please use this
 	version instead of that.},
 }
-```
 
-```
 @INPROCEEDINGS{clusterdata:Liu2012,
   author = {Zitao Liu and Sangyeun Cho},
   title = {Characterizing machines and workloads on a {Google} cluster},
@@ -211,9 +222,7 @@ Order: most recent first.
 	behavior, and how the overall cluster resources are utilized.},
   url = {http://www.cs.pitt.edu/cast/abstract/liu-srmpds12.html},
 }
-```
 
-```
 @INPROCEEDINGS{clusterdata:Di2012a,
   author = {Sheng Di and Derrick Kondo and Walfredo Cirne},
   title = {Characterization and comparison of cloud versus {Grid} workloads},
@@ -259,9 +268,9 @@ Order: most recent first.
 	\url{http://hal.archives-ouvertes.fr/hal-00705858}.  It used
 	to be included here as clusterdata:Di2012.},
 }
-```
 
-```
+################ 2010
+
 @Article{clusterdata:Mishra2010,
   author = {Mishra, Asit K. and Hellerstein, Joseph L. and Cirne,
 	Walfredo and Das, Chita R.},
@@ -323,19 +332,18 @@ Order: most recent first.
 	with long duration that have large demands for CPU and
 	memory.},
 }
-```
 
 
----
-
-
-# Trace-usage papers #
+################################################################
+# Trace-usage papers
+################################################################
 
 These entries are for papers that primarily focus on some other topic, but
 use the traces as inputs, e.g., in simulations or load predictions.
 Order: most recent first.
 
-```
+################ 2015
+
 @INPROCEEDINGS{clusterdata:Sirbu2015,
   title = {Towards Data-Driven Autonomics in Data Centers},
   author = {Alina S{\^\i}rbu and Ozalp Babaoglu},
@@ -379,9 +387,9 @@ Order: most recent first.
 	authors' website.},
   url = {http://www.cs.unibo.it/babaoglu/papers/pdf/CAC2015.pdf},
 }
-```
 
-```
+################ 2014
+
 @InProceedings{clusterdata:Iglesias2014:task-estimation,
   author = {Jesus Omana Iglesias and Liam Murphy Lero and Milan De
 	Cauwer and Deepak Mehta and Barry O'Sullivan},
@@ -419,9 +427,7 @@ Order: most recent first.
   keys = {online scheduling, Cloud computing, forecasting, resource provisioning,
 constraint programming},
 }
-```
 
-```
 @InProceedings{clusterdata:Balliu2014,
   author = {Alkida Balliu and Dennis Olivetti and Ozalp Babaoglu and
 	Moreno Marzolla and Alina Sirbu},
@@ -455,9 +461,7 @@ constraint programming},
 	several public traces of Google data clusters for building a
 	simulation model capable of reproducing observed behavior.},
 }
-```
 
-```
 @inproceedings{clusterdata:Caglar2014,
   title = {{iOverbook}: intelligent resource-overbooking to support
 	soft real-time applications in the cloud},
@@ -496,9 +500,7 @@ constraint programming},
 	12.5\% and save 32\% power in the data center.},
   url = {http://www.dre.vanderbilt.edu/~gokhale/WWW/papers/CLOUD-2014.pdf},
 }
-```
 
-```
 @inproceedings{clusterdata:Sebastio2014,
   author = {Sebastio, Stefano and Amoretti, Michele and Lluch Lafuente, Alberto},
   title = {A computational field framework for collaborative task
@@ -529,9 +531,7 @@ constraint programming},
 	paradigm, that we validate through simulation-based
 	statistical analysis over Google cluster data.},
 }
-```
 
-```
 @inproceedings{clusterdata:Breitgand2014-adaptive,
   title = {An adaptive utilization accelerator for virtualized environments},
   author = {Breitgand, David and Dubitzky, Zvi and Epstein, Amir and
@@ -564,9 +564,7 @@ constraint programming},
 	workloads' variability and dynamically adapts the effective
 	over-commit ratio to these changes.},
 }
-```
 
-```
 @ARTICLE{clusterdata:Zhang2014-Harmony,
   author = {Qi Zhang and Mohamed Faten Zhani and Raouf Boutaba and
 	Joseph L Hellerstein},
@@ -605,9 +603,9 @@ constraint programming},
 	reduce energy by 28 percent compared to
 	heterogeneity-oblivious solutions.},
 }
-```
 
-```
+################ 2013
+
 @INPROCEEDINGS{clusterdata:Di2013a,
   title = {Optimization of cloud task processing with checkpoint-restart mechanism},
   author = {Di, Sheng and Robert, Yves and Vivien, Fr\'ed\'eric and
@@ -637,9 +635,7 @@ constraint programming},
 	3--10 percent, reducing wallclock lengths by 50--100 seconds
 	per job on average.},
 }
-```
 
-```
 @inproceedings{clusterdata:Qiang2013-anomaly,
   author = {Qiang Guan and Song Fu},
   title = {Adaptive Anomaly Identification by Exploring Metric
@@ -677,9 +673,7 @@ constraint programming},
 	mechanism can achieve more efficient and accurate anomaly
 	detection than other existing schemes.},
 }
-```
 
-```
 @ARTICLE{clusterdata:Zhani2013-HARMONY,
   title = {{HARMONY}: dynamic heterogeneity-aware resource provisioning in the cloud},
   author = {Qi Zhang and Mohamed Faten Zhani and Raouf Boutaba and
@@ -721,9 +715,7 @@ constraint programming},
 	approach can improve data center energy efficiency by up to
 	28\% compared to heterogeneity-oblivious solutions.},
 }
-```
 
-```
 @INPROCEEDINGS{clusterdata:Amoretti2013
   title = {A cooperative approach for distributed task execution in autonomic clouds},
   author = {Amoretti, M. and Lafuente, A.L. and Sebastio, S.},
@@ -761,9 +753,9 @@ constraint programming},
   address = {Belfast, UK},
   url = {http://doi.ieeecomputersociety.org/10.1109/PDP.2013.47},
 }
-```
 
-```
+################ 2012
+
 @INPROCEEDINGS{clusterdata:Di2012b,
   title = {Host load prediction in a {Google} compute cloud with a {Bayesian} model},
   author = {Di, Sheng and Kondo, Derrick and Cirne, Walfredo},
@@ -794,9 +786,7 @@ constraint programming},
   url = {http://dl.acm.org/citation.cfm?id=2388996.2389025},
   publisher = {IEEE Computer Society Press},
 }
-```
 
-```
 @INPROCEEDINGS{clusterdata:Zhang2012,
   title = {Dynamic energy-aware capacity provisioning for cloud computing environments},
   author = {Zhang, Qi and Zhani, Mohamed Faten and Zhang, Shuo and
@@ -837,9 +827,7 @@ constraint programming},
 	energy cost, while maintaining an acceptable average
 	scheduling delay for individual tasks.},
 }
-```
 
-```
 @INPROCEEDINGS{clusterdata:Ali-Eldin2012
   title = {Efficient provisioning of bursty scientific workloads on the
 	cloud using adaptive elasticity control},
@@ -874,9 +862,9 @@ constraint programming},
 	the expense of between 20\% and 30\% over-provisioning, as
 	compared to a few percent for the reactive controller.},
 }
-```
 
-```
+################ 2011
+
 @INPROCEEDINGS{clusterdata:Sharma2011,
   title = {Modeling and synthesizing task placement constraints in
 	{Google} compute clusters},
@@ -931,9 +919,7 @@ constraint programming},
 	of only 13\% in task scheduling delay and 5\% in resource
 	utilization.},
 }
-```
 
-```
 @INPROCEEDINGS{clusterdata:Wang2011,
   title = {Towards synthesizing realistic workload traces for studying
 	the {Hadoop} ecosystem},
@@ -973,4 +959,3 @@ constraint programming},
 	Quantifying the impact of shared storage on Hadoop system
 	performance.}
 }
-```
