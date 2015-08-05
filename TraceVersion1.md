@@ -1,7 +1,8 @@
-The first dataset, provides traces over a 7 hour period. The workload consists
-of a set of tasks, where each task runs on a single machine. Tasks consume
-memory and one or more cores (in fractional units). Each task belongs to a
-single job; a job may have multiple tasks (e.g., mappers and reducers).
+The first dataset provides traces from a Borg cell that were taken over a 7 hour
+period. The workload consists of a set of tasks, where each task runs on a
+single machine. Tasks consume memory and one or more cores (in fractional
+units). Each task belongs to a single job; a job may have multiple tasks (e.g.,
+mappers and reducers).
 
 The trace data is available
 [here](http://commondatastorage.googleapis.com/clusterdata-misc/google-cluster-data-1.csv.gz).
@@ -15,7 +16,7 @@ transformation. However, even with these transformations of the data,
 researchers will be able to do workload characterizations (up to a linear
 transformation of the true workload) and workload generation.
 
-The data are structured as blank separated columns. Each row reports on the
+The data are structured as blank-separated columns. Each row reports on the
 execution of a single task during a five minute period.
 
   * `Time` (int) - time in seconds since the start of data collection
@@ -25,4 +26,8 @@ execution of a single task during a five minute period.
   * `Normalized Task Cores` (float) - normalized value of the average number of cores used by the task
   * `Normalized Task Memory` (float) - normalized value of the average memory consumed by the task
 
-Please let us know of any issues you have with the data.
+*Note: for new work, we recommend using the [ClusterData2011\_2](ClusterData2011_2.md) traces, which are more recent, more comprehensive, and provide much more data.*
+
+Questions? Send [email](mailto:googleclusterdata-discuss@googlegroups.com)
+or peruse the 
+[discussion group](http://groups.google.com/group/googleclusterdata-discuss).

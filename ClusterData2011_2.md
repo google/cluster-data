@@ -81,4 +81,4 @@ CPI and MAI values.
 
 # Questions?
 
-Please send email to
+Please send email to googleclusterdata-discuss@googlegroups.com.
