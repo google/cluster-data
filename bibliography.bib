@@ -413,6 +413,46 @@ Order: most recent first.
   url = {http://www.cs.unibo.it/babaoglu/papers/pdf/CAC2015.pdf},
 }
 
+@inproceedings {clusterdata:Delgado2015hawk,
+  author = {Pamela Delgado and Florin Dinu and Anne-Marie Kermarrec and Willy Zwaenepoel},
+  title = {{Hawk}: hybrid datacenter scheduling},
+  year = {2015},
+  booktitle = {USENIX Annual Technical Conference (USENIX ATC)},
+  month = Jul,
+  publisher = {USENIX Association},
+  pages = {499--510},
+  address = {Santa Clara, CA, USA},
+  isbn = {978-1-931971-225},
+  url = {https://www.usenix.org/conference/atc15/technical-session/presentation/delgado},
+  abstract = {
+	This paper addresses the problem of efficient scheduling of large clusters under
+	high load and heterogeneous workloads. A heterogeneous workload typically
+	consists of many short jobs and a small number of large jobs that consume the
+	bulk of the cluster’s resources.
+
+	Recent work advocates distributed scheduling to overcome the limitations
+	of centralized schedulers for large clusters with many competing
+	jobs. Such distributed schedulers are inherently scalable, but may make
+	poor scheduling decisions because of limited visibility into the overall
+	resource usage in the cluster. In particular, we demonstrate that under
+	high load, short jobs can fare poorly with such a distributed scheduler.
+
+	We propose instead a new hybrid centralized/distributed scheduler,
+	called Hawk. In Hawk, long jobs are scheduled using a centralized
+	scheduler, while short ones are scheduled in a fully distributed
+	way. Moreover, a small portion of the cluster is reserved for the use of
+	short jobs. In order to compensate for the occasional poor decisions
+	made by the distributed scheduler, we propose a novel and efficient
+	randomized work-stealing algorithm.
+
+	We evaluate Hawk using a trace-driven simulation and a prototype
+	implementation in Spark. In particular, using a Google trace, we show
+	that under high load, compared to the purely distributed Sparrow
+	scheduler, Hawk improves the 50th and 90th percentile runtimes by 80\%
+	and 90\% for short jobs and by 35\% and 10\% for long jobs,
+	respectively. Measurements of a prototype implementation using Spark on
+	a 100-node cluster confirm the results of the simulation.},
+}
 ################ 2014
 
 @InProceedings{clusterdata:Iglesias2014:task-estimation,
