@@ -377,6 +377,41 @@ Order: most recent first.
 
 ################ 2017
 
+@inproceedings{clusterdata:Janus2017,
+  author = {Pawel Janus and Krzysztof Rzadca},
+  title = {{SLO}-aware Colocation of Data Center Tasks Based on Instantaneous Processor Requirements},
+  booktitle = {ACM Symposium on Cloud Computing (SoCC)},
+  year = 2017,
+  month = Sep,
+  pages = {256--268},
+  address = {Santa Clara, CA, USA},
+  publisher = {ACM},
+  abstract = {In a cloud data center, a single physical machine
+	simultaneously executes dozens of highly heterogeneous
+	tasks.  Such colocation results in more efficient
+	utilization of machines, but, when tasks' requirements
+	exceed available resources, some of the tasks might be
+	throttled down or preempted.  We analyze version 2.1 of
+	the Google cluster trace that shows short-term (1 second)
+	task CPU usage.  Contrary to the assumptions taken by
+	many theoretical studies, we demonstrate that the
+	empirical distributions do not follow any single
+	distribution. However, high percentiles of the total
+	processor usage (summed over at least 10 tasks) can be
+	reasonably estimated by the Gaussian distribution.  We
+	use this result for a probabilistic fit test, called the
+	Gaussian Percentile Approximation (GPA), for standard
+	bin-packing algorithms.  To check whether a new task will
+	fit into a machine, GPA checks whether the resulting
+	distribution's percentile corresponding to the requested
+	service level objective, SLO is still below the machine's
+	capacity.  In our simulation experiments, GPA resulted in
+	colocations exceeding the machines' capacity with a
+	frequency similar to the requested SLO.},
+  doi = {10.1145/3127479.3132244},
+  url = {http://arxiv.org/abs/1709.01384},
+}
+
 @Article{clusterdata:Carvalho2017b,
   author = {Marcus Carvalho and Daniel A. Menasc\'{e} and Francisco Brasileiro},
   title = {Capacity planning for {IaaS} cloud providers offering multiple
@@ -387,7 +422,7 @@ Order: most recent first.
   month = Dec,
   year = 2017,
   abstract = {Infrastructure as a Service (IaaS) cloud providers typically 
-	offer multiple service classes to satisfy users with different 
+	offer multiple service classes to satisfy users with different
 	requirements and budgets. Cloud providers are faced with the challenge of 
 	estimating the minimum resource capacity required to meet Service Level 
 	Objectives (SLOs) defined for all service classes. This paper proposes a 
