@@ -1,3 +1,5 @@
+_This trace was first announced in [this post](https://ai.googleblog.com/2010/01/google-cluster-data.html) from January 2010._
+
 The first dataset provides traces from a Borg cell that were taken over a 7 hour
 period. The workload consists of a set of tasks, where each task runs on a
 single machine. Tasks consume memory and one or more cores (in fractional
