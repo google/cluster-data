@@ -2,12 +2,12 @@
 
 _John Wilkes and Charles Reiss._
 
-The `clusterdata-2011-2` trace represents 29 day's worth of cell information
+The `clusterdata-2011-2` trace represents 29 day's worth of Borg cell information
 from May 2011, on a cluster of about 12.5k machines.
 
   * If you haven't already joined our
     [mailing list](https://groups.google.com/forum/#!forum/googleclusterdata-discuss),
-    please do so now.
+    please do so now.  **Important**: please will out the "reasson" field, or your applicaiton will be rejected.
   * If you haven't already filled out our [brief survey](http://goo.gl/GIDUh),
     please do so now. We use these to keep in touch with you, and announce
     goodies such as new traces.
@@ -31,6 +31,11 @@ the `task_usage` tables.  This new data is a randomly-picked 1 second sample of
 CPU usage from within the associated 5-minute usage-reporting period for that
 task.  Using this data, it is possible to build up a stochastic model of task
 utilization over time for long-running tasks.
+
+![Creative Commons CC-BY license](https://i.creativecommons.org/l/by/4.0/88x31.png)
+The data and trace documentation are made available under the
+[CC-BY](https://creativecommons.org/licenses/by/4.0/) license.
+By downloading it or using it, you agree to the terms of this license.
 
 ## Downloading the trace
 
