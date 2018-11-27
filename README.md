@@ -34,3 +34,9 @@ These are traces of workloads running on Google compute cells.
 These are [execution traces from ETA](ETAExplorationTraces.md) (Exploratory
 Testing Architecture) - a testing framework that explores interactions
 between distrinbuted, concurrently-executing components.
+
+# License
+![Creative Commons CC-BY license](https://i.creativecommons.org/l/by/4.0/88x31.png)
+The data and trace documentation are made available under the
+[CC-BY](https://creativecommons.org/licenses/by/4.0/) license.
+By downloading it or using them, you agree to the terms of this license.
