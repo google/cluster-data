@@ -441,6 +441,16 @@ Order: most recent first.
 
 The clusterdata:Sebastio2018b is in press:
 
+@inproceedings{Liu:2018gh,
+  author = {Liu, Jinwei and Shen, Haiying and Sarker, Ankur and Chung, Wingyan},
+  title = {{Leveraging Dependency in Scheduling and Preemption for High Throughput in Data-Parallel Clusters}},
+  booktitle = {2018 IEEE International Conference on Cluster Computing (CLUSTER)},
+  year = {2018},
+  pages = {359--369},
+  publisher = {IEEE},
+  abstract = {Task scheduling and preemption are two important functions in data-parallel clusters. Though directed acyclic graph task dependencies are common in data-parallel clusters, previous task scheduling and preemption methods do not fully utilize such task dependency to increase throughput since they simply schedule precedent tasks prior to their dependent tasks or neglect the dependency. We notice that in both scheduling and preemption, choosing a task with more dependent tasks to run allows more tasks to be runnable next, which facilitates to select a task that can more increase throughput. Accordingly, in this paper, we propose a Dependency-aware Scheduling and Preemption system (DSP) to achieve high throughput. First, we build an integer linear programming model to minimize the makespan (i.e., the time when all jobs finish execution) with the consideration of task dependency and deadline, and derive the target server and start time for each task, which can minimize the makespan. Second, we utilize task dependency to determine tasks' priorities for preemption. Finally, we propose a method to reduce the number of unnecessary preemptions that cause more overhead than the throughput gain. Extensive experimental results based on a real cluster and Amazon EC2 cloud service show that DSP achieves much higher throughput compared to existing strategies.}
+}
+
 @ARTICLE{clusterdata:Sebastio2018b,
   author = {Stefano Sebastio and Rahul Ghosh and Tridib Mukherjee},
   journal = {IEEE Transactions on Services Computing},
