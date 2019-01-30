@@ -7,7 +7,7 @@ from May 2011, on a cluster of about 12.5k machines.
 
   * If you haven't already joined our
     [mailing list](https://groups.google.com/forum/#!forum/googleclusterdata-discuss),
-    please do so now.  **Important**: please will out the "reasson" field, or your applicaiton will be rejected.
+    please do so now.  **Important**: please fill out the "reason" field, or your application will be rejected.
   * If you haven't already filled out our [brief survey](http://goo.gl/GIDUh),
     please do so now. We use these to keep in touch with you, and announce
     goodies such as new traces.
@@ -22,8 +22,8 @@ The trace is described in the trace-data
 [v2.1 format + schema document](https://drive.google.com/open?id=0B5g07T_gRDg9Z0lsSTEtTWtpOW8&authuser=0).
 
 Priorities in this trace range from 0 to 11 inclusive; bigger numbers mean "more
-important". 0 and 1 are “free” priorities; 9, 10, and 11 and “production”
-priorities; and 10 is a “monitoring” priority.<br>
+important". 0 and 1 are “free” priorities; 9, 10, and 11 are “production”
+priorities; and 12 is a “monitoring” priority.<br>
 
 The `clusterdata-2011-2` trace is identical to the one called
 `clusterdata-2011-1`, except for the addition of a single new column of data in
