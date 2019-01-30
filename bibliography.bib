@@ -439,14 +439,45 @@ Order: most recent first.
 
 ################ 2018
 
-The clusterdata:Sebastio2018b is in press:
+@INPROCEEDINGS{clusterdata:Liu2018gh,
+  author = {Liu, Jinwei and Shen, Haiying and Sarker, Ankur and Chung, Wingyan},
+  title = {Leveraging Dependency in Scheduling and Preemption for High Throughput in Data-Parallel Clusters},
+  booktitle = {2018 IEEE International Conference on Cluster Computing (CLUSTER)},
+  year = {2018},
+  month = Sep,
+  pages = {359--369},
+  publisher = {IEEE},
+  abstract = {Task scheduling and preemption are two important functions in
+	data-parallel clusters. Though directed acyclic graph task dependencies
+	are common in data-parallel clusters, previous task scheduling and
+	preemption methods do not fully utilize such task dependency to increase
+	throughput since they simply schedule precedent tasks prior to their
+	dependent tasks or neglect the dependency. We notice that in both
+	scheduling and preemption, choosing a task with more dependent tasks to
+	run allows more tasks to be runnable next, which facilitates to select a
+	task that can more increase throughput. Accordingly, in this paper, we
+	propose a Dependency-aware Scheduling and Preemption system (DSP) to
+	achieve high throughput. First, we build an integer linear programming
+	model to minimize the makespan (i.e., the time when all jobs finish
+	execution) with the consideration of task dependency and deadline, and
+	derive the target server and start time for each task, which can
+	minimize the makespan. Second, we utilize task dependency to determine
+	tasks' priorities for preemption. Finally, we propose a method to reduce
+	the number of unnecessary preemptions that cause more overhead than the
+	throughput gain. Extensive experimental results based on a real cluster
+	and Amazon EC2 cloud service show that DSP achieves much higher
+	throughput compared to existing strategies.},
+  doi = {10.1109/CLUSTER.2018.00054},
+}
+
 
 @ARTICLE{clusterdata:Sebastio2018b,
   author = {Stefano Sebastio and Rahul Ghosh and Tridib Mukherjee},
   journal = {IEEE Transactions on Services Computing},
   title = {An availability analysis approach for deployment configurations of containers},
   year = {2018},
-abstract = {Operating system (OS) containers enabling the microservice-oriented
+  month = Jan,
+  abstract = {Operating system (OS) containers enabling the microservice-oriented
 	architecture are becoming popular in the context of Cloud
 	services. Containers provide the ability to create lightweight and
 	portable runtime environments decoupling the application requirements
@@ -529,7 +560,7 @@ abstract = {Operating system (OS) containers enabling the microservice-oriented
   day = 01,
   volume = 12,
   number = 7,
-  pages = {1535-–1551},
+  pages = {1535--1551},
   abstract = {In the last years, demand and availability of computational
 	capabilities experienced radical changes. Desktops and laptops increased
 	their processing resources, exceeding users' demand for large part of
@@ -567,7 +598,7 @@ abstract = {Operating system (OS) containers enabling the microservice-oriented
 	service classes},
   journal = {Future Generation Computer Systems},
   volume = {77},
-  pages = {97–-111},
+  pages = {97--111},
   month = Dec,
   year = 2017,
   abstract = {Infrastructure as a Service (IaaS) cloud providers typically offer
@@ -677,7 +708,7 @@ abstract = {Operating system (OS) containers enabling the microservice-oriented
 	access to virtually infinite resources with the same aptitude of using
 	any other utility. Next to the cloud, the volunteer computing paradigm
 	has gained attention in the last decade, where the spared resources on
-	each personal machine are shared thanks to the usersâ€™ willingness to
+	each personal machine are shared thanks to the usersÃ¢â�¬â�¢ willingness to
 	cooperate. Cloud and volunteer paradigms have been recently seen as
 	companion technologies to better exploit the use of local
 	resources. Conversely, this scenario places complex challenges in
@@ -704,7 +735,7 @@ abstract = {Operating system (OS) containers enabling the microservice-oriented
   booktitle = {13th International Conference on Economics of Grids, Clouds, Systems and Services (GECON2016)},
   month = September,
   address = {Athens, Greece},
-  abstract = {Datacenters provide an IT backbone for today’s business and
+  abstract = {Datacenters provide an IT backbone for today's business and
 	economy, and are the principal electricity consumers for Cloud
 	computing. Various studies suggest that approximately 30\% of the
 	running servers in US datacenters are idle and the others are
@@ -727,7 +758,7 @@ abstract = {Operating system (OS) containers enabling the microservice-oriented
 }
 
 @INPROCEEDINGS{clusterdata:Sliwko2016,
-  title = {{AGOCS} – Accurate {Google} Cloud Simulator Framework},
+  title = {{AGOCS} - Accurate {Google} Cloud Simulator Framework},
   author = {Leszek Sliwko and Vladimir Getov},
   booktitle = {16th IEEE International Conference on Scalable Computing and Communications (ScalCom 2016)},
   year = 2016,
@@ -735,7 +766,7 @@ abstract = {Operating system (OS) containers enabling the microservice-oriented
   pages={550--558},
   address = {Toulouse, France},
   keywords = {cloud system; workload traces; workload simulation framework; google cluster data},
-  abstract = {This paper presents the Accurate Google Cloud Simulator (AGOCS) –
+  abstract = {This paper presents the Accurate Google Cloud Simulator (AGOCS) -
 	a novel high-fidelity Cloud workload simulator based on parsing real
 	workload traces, which can be conveniently used on a desktop machine for
 	day-to-day research. Our simulation is based on real-world workload
@@ -903,7 +934,7 @@ doi = {10.1109/CIC.2015.27},
   abstract = {This paper addresses the problem of efficient scheduling of large
 	clusters under high load and heterogeneous workloads. A heterogeneous
 	workload typically consists of many short jobs and a small number of
-	large jobs that consume the bulk of the cluster’s resources.
+	large jobs that consume the bulk of the cluster's resources.
 
 	Recent work advocates distributed scheduling to overcome the limitations
 	of centralized schedulers for large clusters with many competing
@@ -953,9 +984,9 @@ doi = {10.1109/CIC.2015.27},
 	monitoring and managing strategies. Despite their reduced application,
 	intelligent agents constitute a feasible technology to add autonomic
 	features to cloud operations. Furthermore, the volunteer computing
-	paradigmâ€”one of the Information and Communications Technology (ICT)
-	trends of the last decadeâ€”can be pulled alongside traditional cloud
-	approaches, with the purpose to â€˜greenâ€™ them. Indeed, the
+	paradigmÃ¢â�¬â��one of the Information and Communications Technology (ICT)
+	trends of the last decadeÃ¢â�¬â��can be pulled alongside traditional cloud
+	approaches, with the purpose to Ã¢â�¬Ë�greenÃ¢â�¬â�¢ them. Indeed, the
 	combination of data center and volunteer resources, managed by agents,
 	allows one to obtain a more robust and scalable cloud computing
 	platform. The increased challenges in designing such a complex system
