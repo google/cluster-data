@@ -17,8 +17,8 @@ useful analyses, do please share them with this community.
 A **[trace bibliography](bibliography.bib)** provides bibtex data for papers
 about or derived from these traces.  If you publish one, please
 [email](mailto:googleclusterdata-discuss@googlegroups.com) a bibtex entry for
-it, so it can be added to the bibliography.  (Try to mimic the format used there
-as exactly as possible.)
+it (or better yet, send a pull request), so it can be added to the bibliography.
+When you do, please mimic the format used there as exactly as possible.
 
 # Cluster workload traces
 These are traces of workloads running on Google compute cells.
