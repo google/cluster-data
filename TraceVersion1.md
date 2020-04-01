@@ -1,4 +1,6 @@
-_This trace was first announced in [this post](https://ai.googleblog.com/2010/01/google-cluster-data.html) from January 2010._
+*Note: for new work, we **strongly** recommend using the [version 2](ClusterData2011_2.md) or [version 3](ClusterData2019.md) traces, which are more recent, more comprehensive, and provide much more data.*
+
+_This trace was first announced in [this January 2010 blog post](https://ai.googleblog.com/2010/01/google-cluster-data.html)._
 
 The first dataset provides traces from a Borg cell that were taken over a 7 hour
 period. The workload consists of a set of tasks, where each task runs on a
@@ -27,8 +29,6 @@ execution of a single task during a five minute period.
   * `Job Type` (0, 1, 2, 3) - class of job (a categorization of work)
   * `Normalized Task Cores` (float) - normalized value of the average number of cores used by the task
   * `Normalized Task Memory` (float) - normalized value of the average memory consumed by the task
-
-*Note: for new work, we **strongly** recommend using the [ClusterData2011\_2](ClusterData2011_2.md) traces, which are more recent, more comprehensive, and provide much more data.*
 
 ![Creative Commons CC-BY license](https://i.creativecommons.org/l/by/4.0/88x31.png)
 The data and trace documentation are made available under the
