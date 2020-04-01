@@ -1,16 +1,13 @@
-# ClusterData2011\_2 traces
+# ClusterData 2011 traces
 
 _John Wilkes and Charles Reiss._
 
 The `clusterdata-2011-2` trace represents 29 day's worth of Borg cell information
-from May 2011, on a cluster of about 12.5k machines.
+from May 2011, on a cluster of about 12.5k machines.  (The `-2` refers to the fact that we added some additional data after the initial release, to create trace version 2.1.)
 
   * If you haven't already joined our
     [mailing list](https://groups.google.com/forum/#!forum/googleclusterdata-discuss),
     please do so now.  **Important**: please fill out the "reason" field, or your application will be rejected.
-  * If you haven't already filled out our [brief survey](http://goo.gl/GIDUh),
-    please do so now. We use these to keep in touch with you, and announce
-    goodies such as new traces.
   
 ## Trace data
 
