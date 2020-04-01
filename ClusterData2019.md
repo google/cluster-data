@@ -18,7 +18,7 @@ In addition to providing a downloadable format, we are also making the trace dat
     **Important: to avoid spammers, you MUST fill out the "reason" field, or your application will be rejected**.
   
 The `clusterdata-2019` traces are described in this document:
-[Google cluster-usage traces v3](Google%20cluster-usage%20traces%20v3.pdf).  You can find the download and access instructions there, as well as many more details about what is in the traces, and how to interpret them. For additional background information, please refer to the 2015 Borg paper, [Large-scale cluster management at Google with Borg](https://ai.google/research/pubs/pub43438). 
+[Google cluster-usage traces v3](https://drive.google.com/file/d/10r6cnJ5cJ89fPWCgj7j4LtLBqYN9RiI9/view).  You can find the download and access instructions there, as well as many more details about what is in the traces, and how to interpret them. For additional background information, please refer to the 2015 Borg paper, [Large-scale cluster management at Google with Borg](https://ai.google/research/pubs/pub43438). 
 
 ![Creative Commons CC-BY license](https://i.creativecommons.org/l/by/4.0/88x31.png)
 The data and trace documentation are made available under the
