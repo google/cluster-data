@@ -1,4 +1,7 @@
-*Note: for new work, we **strongly** recommend using the [version 2](ClusterData2011_2.md) or [version 3](ClusterData2019.md) traces, which are more recent, more comprehensive, and provide much more data.*
+
+|*Note: for new work, we **strongly** recommend using the [version 2](ClusterData2011_2.md) or [version 3](ClusterData2019.md) traces, which are more recent, more comprehensive, and provide much more data.* |
+|--------- |
+
 
 _This trace was first announced in [this January 2010 blog post](https://ai.googleblog.com/2010/01/google-cluster-data.html)._
 
