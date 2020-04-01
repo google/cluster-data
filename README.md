@@ -3,39 +3,33 @@
 This repository describes various traces from parts of the Google cluster
 management software and systems.
 
-Please let us know about any issues, insights, or papers you publish using these
-traces by
-sending [email](mailto:googleclusterdata-discuss@googlegroups.com)
-to the
-[discussion group](http://groups.google.com/group/googleclusterdata-discuss).
-(And please join this group to be kept up to date with new announcements!)
-The more specific the data, the more likely we are to be able to help you.
+  * Please join our (low volume) [discussion group](http://groups.google.com/group/googleclusterdata-discuss), so we can send you announcements, and you can let us know about any issues, insights, or papers you publish using these traces.
+  **Important: to avoid spammers, you MUST fill out the "reason" field, or your application will be rejected**.
+  Once you are a member, you can send email to [googleclusterdata-discuss@googlegroups.com](mailto:googleclusterdata-discuss@googlegroups.com) to:
 
-If you have (or generate) tools that help analyze or decode the trace data, or
-useful analyses, do please share them with this community.
+    * Announce tools and techniques that can help others analyze or decode the trace data.
+    * Share insights and surprises.
+    * Ask questions (the group has a few hundred members) and get help.  If you ask for help, please include concrete examples of issues you run into; screen shots; error codes; and a list of what you have already tried. Don't just say "I can't download the data"!
 
-A **[trace bibliography](bibliography.bib)** provides bibtex data for papers
-about or derived from these traces.  If you publish one, please
-[email](mailto:googleclusterdata-discuss@googlegroups.com) a bibtex entry for
-it (or better yet, send a pull request), so it can be added to the bibliography.
-When you do, please mimic the format used there as exactly as possible.
+  * We provide a **[trace bibliography](bibliography.bib)** of papers that have used and/or analyzed the traces, and encourage anybody who publishes one to add it to the bibliography using a github pull request [preferred], or by emailing the bibtex entry to [googleclusterdata-discuss@googlegroups.com](mailto:googleclusterdata-discuss@googlegroups.com).  In either case, please mimic the existing format __exactly__.
 
-# Cluster workload traces
-These are traces of workloads running on Google compute cells.
+# Borg cluster workload traces
+These are traces of workloads running on Google compute cells that are managed by the cluster management software internally known as Borg.
 
-  * **[ClusterData2011\_2](ClusterData2011_2.md)** provides data from an
-    12.5k-machine cell over about a month-long period in May 2011.
-  * [TraceVersion1](TraceVersion1.md) is an older, short trace that describes a
-    7 hour period from one cell (cluster).  *Deprecated. For new work, we
-    recommend using the [ClusterData2011\_2](ClusterData2011_2.md) trace instead.*
+  * **[version 3](ClusterData2019.md)** (aka `ClusterData2019`)
+    provides data from eight Borg cells over the month of May 2019.
+  * [version 2](ClusterData2011_2.md) (aka `ClusterData2011`) 
+    provides data from a single 12.5k-machine Borg cell from May 2011.
+  * [version 1](TraceVersion1.md) is an older, short trace that describes a
+    7 hour period from one cell from 2009.  *Deprecated. We strongly
+    recommend using the version 2 or version 3 traces instead.*
 
-# ETA traces
+## ETA traces
 
-These are [execution traces from ETA](ETAExplorationTraces.md) (Exploratory
-Testing Architecture) - a testing framework that explores interactions
-between distrinbuted, concurrently-executing components.
+In addition, this site hosts a set of [execution traces from ETA](ETAExplorationTraces.md) (Exploratory Testing Architecture) - a testing framework that explores interactions
+between distributed, concurrently-executing components, with an eye towards improving testing them.
 
-# License
+## License
 ![Creative Commons CC-BY license](https://i.creativecommons.org/l/by/4.0/88x31.png)
 The data and trace documentation are made available under the
 [CC-BY](https://creativecommons.org/licenses/by/4.0/) license.
