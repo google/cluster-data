@@ -1,0 +1,332 @@
+// This file defines the format of the 3rd version of cluster trace data
+// published by Google. Please refer to the associated 'Google cluster-usage
+// traces v3' document.
+// More information at https://github.com/google/cluster-data
+
+syntax = "proto2";
+
+package google.cluster_data;
+
+// Values used to indicate "not present" for special cases.
+enum Constants {
+  option allow_alias = true;  // OK for multiple names to have the same value.
+
+  NO_MACHINE = 0;           // The thing is not bound to a machine.
+  DEDICATED_MACHINE = -1;   // The thing is bound to a dedicated machine.
+  NO_ALLOC_COLLECTION = 0;  // The thing is not running in an alloc set.
+  NO_ALLOC_INDEX = -1;      // The thing does not have an alloc instance index.
+}
+
+// A common structure for CPU and memory resource units.
+// All resource measurements are normalized and scaled.
+message Resources {
+  optional float cpus = 1;    // Normalized GCUs (NCUs).
+  optional float memory = 2;  // Normalized RAM bytes.
+}
+
+// Collections are either jobs (which have tasks) or alloc sets (which have
+// alloc instances).
+enum CollectionType {
+  JOB = 0;
+  ALLOC_SET = 1;
+}
+
+// This enum is used in the 'type' field of the CollectionEvent and
+// InstanceEvent tables.
+enum EventType {
+  // The collection or instance was submitted to the scheduler for scheduling.
+  SUBMIT = 0;
+  // The collection or instance was marked not eligible for scheduling by the
+  // batch scheduler.
+  QUEUE = 1;
+  // The collection or instance became eligible for scheduling.
+  ENABLE = 2;
+  // The collection or instance started running.
+  SCHEDULE = 3;
+  // The collection or instance was descheduled because of a higher priority
+  // collection or instance, or because the scheduler overcommitted resources.
+  EVICT = 4;
+  // The collection or instance was descheduled due to a failure.
+  FAIL = 5;
+  // The collection or instance completed normally.
+  FINISH = 6;
+  // The collection or instance was cancelled by the user or because a
+  // depended-upon collection died.
+  KILL = 7;
+  // The collection or instance was presumably terminated, but due to missing
+  // data there is insufficient information to identify when or how.
+  LOST = 8;
+  // The collection or instance was updated (scheduling class or resource
+  // requirements) while it was waiting to be scheduled.
+  UPDATE_PENDING = 9;
+  // The collection or instance was updated while it was scheduled somewhere.
+  UPDATE_RUNNING = 10;
+}
+// Represents reasons why we synthesized a scheduler event to replace
+// apparently missing data.
+enum MissingType {
+  MISSING_TYPE_NONE = 0;  // No data was missing.
+  SNAPSHOT_BUT_NO_TRANSITION = 1;
+  NO_SNAPSHOT_OR_TRANSITION = 2;
+  EXISTS_BUT_NO_CREATION = 3;
+  TRANSITION_MISSING_STEP = 4;
+  TOO_MANY_EVENTS = 5;
+}
+// How latency-sensitive a thing is to CPU scheduling delays when running
+// on a machine, in increasing-sensitivity order.
+// Note that this is _not_ the same as the thing's cluster-scheduling
+// priority although latency-sensitive things do tend to have higher priorities.
+enum LatencySensitivity {
+  MOST_INSENSITIVE = 0;  // Also known as "best effort".
+  INSENSITIVE = 1;       // Often used for batch jobs.
+  SENSITIVE = 2;         // Used for latency-sensitive jobs.
+  MOST_SENSITIVE = 3;    // Used for the most latency-senstive jobs.
+}
+
+// Represents the type of scheduler that is handling a job.
+enum Scheduler {
+  // Handled by the default cluster scheduler.
+  SCHEDULER_DEFAULT = 0;
+  // Handled by a secondary scheduler, optimized for batch loads.
+  SCHEDULER_BATCH = 1;
+}
+
+// How the collection is verically auto-scaled.
+enum VerticalScalingSetting {
+  // We were unable to determine the setting.
+  VERTICAL_SCALING_SETTING_UNKNOWN = 0;
+  // Vertical scaling was disabled, e.g., in the collection
+  // creation request.
+  VERTICAL_SCALING_OFF = 1;
+  // Vertical scaling was enabled, with user-supplied lower
+  // and/or upper bounds for GCU and/or RAM.
+  VERTICAL_SCALING_CONSTRAINED = 2;
+  // Vertical scaling was enabled, with no user-provided bounds.
+  VERTICAL_SCALING_FULLY_AUTOMATED = 3;
+}
+
+// A constraint represents a request for a thing to be placed on a machine
+// (or machines) with particular attributes.
+message MachineConstraint {
+  // Comparison operation between the supplied value and the machine's value.
+  // For EQUAL and NOT_EQUAL relationships, the comparison is a string
+  // comparison; for LESS_THAN, GREATER_THAN, etc., the values are converted to
+  // floating point numbers first; for PRESENT and NOT_PRESENT, the test is
+  // merely whether the supplied attribute exists for the machine in question,
+  // and the value field of the constraint is ignored.
+  enum Relation {
+    EQUAL = 0;
+    NOT_EQUAL = 1;
+    LESS_THAN = 2;
+    GREATER_THAN = 3;
+    LESS_THAN_EQUAL = 4;
+    GREATER_THAN_EQUAL = 5;
+    PRESENT = 6;
+    NOT_PRESENT = 7;
+  }
+
+  // Obfuscated name of the constraint.
+  optional string name = 1;
+  // Target value for the constraint (e.g., a minimum or equality).
+  optional string value = 2;
+  // Comparison operator.
+  optional Relation relation = 3;
+}
+
+// Instance and collection events both share a common prefix, followed by
+// specific fields. Information about an instance event (task or alloc
+// instance).
+message InstanceEvent {
+  // Common fields shared between instances and collections.
+
+  // Timestamp, in microseconds since the start of the trace.
+  optional uint64 time = 1;
+  // What type of event is this?
+  optional EventType type = 2;
+  // The identity of the collection that this instance is part of.
+  optional int64 collection_id = 3;
+  // How latency-sensitive is the instance?
+  optional LatencySensitivity scheduling_class = 4;
+  // Was there any missing data?  If so, why?
+  optional MissingType missing_type = 5;
+  // What type of collection this instance belongs to.
+  optional CollectionType collection_type = 6;
+  // Cluster-level scheduling priority for the instance.
+  optional int32 priority = 7;
+  // (Tasks only) The ID of the alloc set that this task is running in, or
+  // NO_ALLOC_COLLECTION if it is not running in an alloc.
+  optional int64 alloc_collection_id = 8;
+
+  // Begin: fields specific to instances
+  // The index of the instance in its collection (starts at 0).
+  optional int32 instance_index = 9;
+  // The ID of the machine on which this instance is placed (or NO_MACHINE if
+  // not placed on one, or DEDICATED_MACHINE if it's on a dedicated machine).
+  optional int64 machine_id = 10;
+  // (Tasks only) The index of the alloc instance that this task is running in,
+  // or NO_ALLOC_INDEX if it is not running in an alloc.
+  optional int32 alloc_instance_index = 11;
+  // The resources requested when the instance was submitted or last updated.
+  optional Resources resource_request = 12;
+  // Currently active scheduling constraints.
+  repeated MachineConstraint constraint = 13;
+}
+
+// Collection events apply to the collection as a whole.
+message CollectionEvent {
+  // Common fields shared between instances and collections.
+
+  // Timestamp, in microseconds since the start of the trace.
+  optional uint64 time = 1;
+  // What type of event is this?
+  optional EventType type = 2;
+  // The identity of the collection.
+  optional int64 collection_id = 3;
+  // How latency-sensitive is the collection?
+  optional LatencySensitivity scheduling_class = 4;
+  // Was there any missing data?  If so, why?
+  optional MissingType missing_type = 5;
+  // What type of collection is this?
+  optional CollectionType collection_type = 6;
+  // Cluster-level scheduling priority for the collection.
+  optional int32 priority = 7;
+  // The ID of the alloc set that this job is to run in, or NO_ALLOC_COLLECTION
+  // (only for jobs).
+  optional int64 alloc_collection_id = 8;
+
+  // Fields specific to a collection.
+  // The user who runs the collection
+  optional string user = 9;
+  // Obfuscated name of the collection.
+  optional string collection_name = 10;
+  // Obfuscated logical name of the collection.
+  optional string collection_logical_name = 11;
+  // ID of the collection that this is a child of.
+  // (Used for stopping a collection when the parent terminates.)
+  optional int64 parent_collection_id = 12;
+  // IDs of collections that must finish before this collection may start.
+  repeated int64 start_after_collection_ids = 13;
+  // Maximum number of instances of this collection that may be placed on
+  // one machine (or 0 if unlimited).
+  optional int32 max_per_machine = 14;
+  // Maximum number of instances of this collection that may be placed on
+  // machines connected to a single Top of Rack switch (or 0 if unlimited).
+  optional int32 max_per_switch = 15;
+  // How/whether vertical scaling should be done for this collection.
+  optional VerticalScalingSetting vertical_scaling = 16;
+  // The preferred cluster scheduler to use.
+  optional Scheduler scheduler = 17;
+}
+
+// Machine events describe the addition, removal, or update (change) of a
+// machine in the cluster at a particular time.
+message MachineEvent {
+  enum EventType {
+    // Should never happen :-).
+    EVENT_TYPE_UNKNOWN = 0;
+    // Machine added to the cluster.
+    ADD = 1;
+    // Machine removed from cluster (usually due to failure or repairs).
+    REMOVE = 2;
+    // Machine capacity updated (while not removed).
+    UPDATE = 3;
+  }
+
+  // If we detect that data is missing, why do we know this?
+  enum MissingDataReason {
+    // No data is missing.
+    MISSING_DATA_REASON_NONE = 0;
+    // We observed that a change to the state of a machine must have
+    // occurred from an internal state snapshot, but did not see a
+    // corresponding transition event during the trace.
+    SNAPSHOT_BUT_NO_TRANSITION = 1;
+  }
+
+  // Timestamp, in microseconds since the start of the trace. [key]
+  optional uint64 time = 1;
+  // Unique ID of the machine within the cluster. [key]
+  optional int64 machine_id = 2;
+  // Specifies the type of event
+  optional EventType type = 3;
+  // Obfuscated name of the Top of Rack switch that this machine is attached to.
+  optional string switch_id = 4;
+  // Available resources that the machine supplies.  (Note: may be smaller
+  // than the physical machine's raw capacity.)
+  optional Resources capacity = 5;
+  // An obfuscated form of the machine platform (microarchitecture + motherboard
+  // design).
+  optional string platform_id = 6;
+  // Did we detect possibly-missing data?
+  optional MissingDataReason missing_data_reason = 7;
+}
+
+// A machine attribute update or (if time = 0) its initial value.
+message MachineAttribute {
+  // Timestamp, in microseconds since the start of the trace. [key]
+  optional uint64 time = 1;
+  // Unique ID of the machine within the cluster. [key]
+  optional int64 machine_id = 2;
+  // Obfuscated unique name of the attribute (unique across all clusters). [key]
+  optional string name = 3;
+  // Value of the attribute.  If this is unset, then 'deleted' must be true.
+  optional string value = 4;
+  // True if the attribute is being deleted at this time.
+  optional bool deleted = 5;
+}
+
+// Information about resource consumption (usage) during a sample window
+// (which is typically 300s, but may be shorter if the instance started
+// and/or ended during a measurement window).
+message InstanceUsage {
+  // Sample window end points, in microseconds since the start of the trace.
+  optional uint64 start_time = 1;
+  optional uint64 end_time = 2;
+  // ID of collection that this instance belongs to.
+  optional int64 collection_id = 3;
+  // Index of this instance's position in that collection (starts at 0).
+  optional int32 instance_index = 4;
+  // Unique ID of the machine on which the instance has been placed.
+  optional int64 machine_id = 5;
+
+  // ID and index of the alloc collection + instance in which this instance
+  // is running, or NO_ALLOC_COLLECTION / NO_ALLOC_INDEX if it is not
+  // running inside an alloc.
+  optional int64 alloc_collection_id = 6;
+  optional int64 alloc_instance_index = 7;
+  // Type of the collection that this instance belongs to.
+  optional CollectionType collection_type = 8;
+  // Average (mean) usage over the measurement period.
+  optional Resources average_usage = 9;
+  // Observed maximum usage over the measurement period.
+  // This measurement may be fully or partially missing in some cases.
+  optional Resources maximum_usage = 10;
+  // Observed CPU usage during a randomly-sampled second within the measurement
+  // window. (No memory data is provided here.)
+  optional Resources random_sample_usage = 11;
+
+  // The memory limit imposed on this instance; normally, it will not be
+  // allowed to exceed this amount of memory.
+  optional float assigned_memory = 12;
+  // Amount of memory that is used for the instance's file page cache in the OS
+  // kernel.
+  optional float page_cache_memory = 13;
+
+  // Average (mean) number of processor and memory cycles per instruction.
+  optional float cycles_per_instruction = 14;
+  optional float memory_accesses_per_instruction = 15;
+  // The average (mean) number of data samples collected per second
+  // (e.g., sample_rate=0.5 means a sample every 2 seconds on average).
+  optional float sample_rate = 16;
+
+  // CPU usage percentile data.
+  // The cpu_usage_distribution vector contains 10 elements, representing
+  // 0%ile (aka min), 10%ile, 20%ile, ... 90%ile, 100%ile (aka max) of the
+  // normalized CPU usage in NCUs.
+  // Note that the 100%ile may not exactly match the maximum_usage
+  // value because of interpolation effects.
+  repeated float cpu_usage_distribution = 17;
+  // The tail_cpu_usage_distribution vector contains 9 elements, representing
+  // 91%ile, 92%ile, 93%ile, ... 98%ile, 99%ile of the normalized CPU resource
+  // usage in NCUs.
+  repeated float tail_cpu_usage_distribution = 18;
+}
