@@ -12,9 +12,17 @@ traces, as well as ones that use them as inputs to other studies.
 
 The following are the RECOMMENDED CITATIONS if you just need the basics:
 
-  1. \cite{clusterdata:Wilkes2011, clusterdata:Reiss2011} for the "full"
-     ClusterData2011 trace.
-  2. \cite{clusterdata:Reiss2012b} for the first thorough analysis of it.
+  * Borg:
+     * \cite{clusterdata:Verma2015, clusterdata:Tirmazi2020} for Borg itself
+  * 2019 traces:
+     * \cite{clusterdata:Wilkes2020, clusterdata:Wilkes2020a, clusterdata:Tirmazi2020} for
+       the complete set of info about trace itself.
+     * \cite{clusterdata:Wilkes2020} for the 2019 trace announcement
+     * \cite{clusterdata:Wilkes2020a} for the details about the 2019 trace contents
+     * \cite{clusterdata:Tirmazi2020} for the EuroSys paper about the 2019 and 2011 traces
+  * 2011 trace:
+     * \cite{clusterdata:Wilkes2011, clusterdata:Reiss2011} for the trace itself
+     * \cite{clusterdata:Reiss2012b} for the first thorough analysis of it.
 
 If you use the traces, please send a bibtex entry that looks *exactly* like one
 of these to johnwilkes@google.com, so your paper can be added - and cited!  A
@@ -25,15 +33,47 @@ Github pull request is the best format.
 ################################################################
 
 These entries can be used to cite the traces themselves.
-The first couple are for the May 2011 "full" trace.
+
+# The May 2019 traces.
+# Use clusterdata:Tirmazi2020 for the first paper to analyze them.
+
+# This is the formal announcement of the trace:
+@Misc{clusterdata:Wilkes2020,
+  author = {John Wilkes},
+  title = {Yet more {Google} compute cluster trace data},
+  howpublished = {Google research blog},
+  month = Apr,
+  year = 2020,
+  address = {Mountain View, CA, USA},
+  note = {Posted at \url{https://ai.googleblog.com/2020/04/yet-more-google-compute-cluster-trace.html}.},
+}
+
+# If you want to cite details about the trace itself:
+@TechReport{clusterdata:Wilkes2020a,
+  author = {John Wilkes},
+  title = {{Google} cluster-usage traces v3},
+  institution = {Google Inc.},
+  year = 2020,
+  month = Apr,
+  type = {Technical Report},
+  address = {Mountain View, CA, USA},
+  note = {Posted at \url{https://github.com/google/cluster-data/blob/master/ClusterData2019.md}},
+  abstract = {
+	This document describes the semantics, data format, and
+	schema of usage traces of a few Google compute cells.
+	This document describes version 3 of the trace format.},
+}
+
+#----------------
+The next couple are for the May 2011 "full" trace.
 @Misc{clusterdata:Wilkes2011,
   author = {John Wilkes},
   title = {More {Google} cluster data},
   howpublished = {Google research blog},
   month = Nov,
   year = 2011,
-  note = {Posted at
-	\url{http://googleresearch.blogspot.com/2011/11/more-google-cluster-data.html}.},
+  address = {Mountain View, CA, USA},
+  note = {Posted at \url{http://googleresearch.blogspot.com/2011/11/more-google-cluster-data.html}.},
 }
 
 @TechReport{clusterdata:Reiss2011,
@@ -61,6 +101,37 @@ The first couple are for the May 2011 "full" trace.
   year = 2010,
   note = {Posted at \url{http://googleresearch.blogspot.com/2010/01/google-cluster-data.html}.},
 }
+
+#----------------
+The canonical Borg paper.
+@inproceedings{clusterdata:Verma2015,
+  title = {Large-scale cluster management at {Google} with {Borg}},
+  author = {Abhishek Verma and Luis Pedrosa and Madhukar R. Korupolu and David Oppenheimer and Eric Tune and John Wilkes},
+  year = {2015},
+  booktitle = {Proceedings of the European Conference on Computer Systems (EuroSys'15)},
+  address = {Bordeaux, France},
+  articleno = {18},
+  numpages = {17},
+  abstract = {
+	Google's Borg system is a cluster manager that runs hundreds of thousands of jobs,
+	from many thousands of different applications, across a number of clusters each with
+	up to tens of thousands of machines.
+
+	It achieves high utilization by combining admission control, efficient task-packing,
+	over-commitment, and machine sharing with process-level performance isolation.
+	It supports high-availability applications with runtime features that minimize
+	fault-recovery time, and scheduling policies that reduce the probability of correlated
+	failures. Borg simplifies life for its users by offering a declarative job specification
+	language, name service integration, real-time job monitoring, and tools to analyze and
+	simulate system behavior.
+
+	We present a summary of the Borg system architecture and features, important design
+	decisions, a quantitative analysis of some of its policy decisions, and a qualitative
+	examination of lessons learned from a decade of operational experience with it.},
+  url = {https://dl.acm.org/doi/10.1145/2741948.2741964},
+  doi = {10.1145/2741948.2741964},
+}
+
 
 #----------------
 The next paper describes the policy choices and technologies used to
@@ -104,6 +175,42 @@ Order: most recent first.
 
 If you just want one citation about the Cluster2011 trace, then
 use \cite{clusterdata:Reiss2012b}.
+
+################ 2020
+
+@inproceedings{clusterdata:Tirmazi2020,
+  author = {Tirmazi, Muhammad and Barker, Adam and Deng, Nan and Haque, Md E. and Qin, Zhijing Gene and Hand, Steven and Harchol-Balter, Mor and Wilkes, John},
+  title = {{Borg: the Next Generation}},
+  year = {2020},
+  isbn = {9781450368827},
+  publisher = {ACM},
+  address = {Heraklion, Greece},
+  url = {https://doi.org/10.1145/3342195.3387517},
+  doi = {10.1145/3342195.3387517},
+  booktitle = {Proceedings of the Fifteenth European Conference on Computer Systems (EuroSys'20)},
+  articleno = {30},
+  numpages = {14},
+  keywords = {data centers, cloud computing},
+  abstract = {
+	This paper analyzes a newly-published trace that covers 8
+	different Borg clusters for the month of May 2019. The
+	trace enables researchers to explore how scheduling works in
+	large-scale production compute clusters. We highlight how
+	Borg has evolved and perform a longitudinal comparison of
+	the newly-published 2019 trace against the 2011 trace, which
+	has been highly cited within the research community.
+	Our findings show that Borg features such as alloc sets
+	are used for resource-heavy workloads; automatic vertical
+	scaling is effective; job-dependencies account for much of
+	the high failure rates reported by prior studies; the workload
+	arrival rate has increased, as has the use of resource
+	over-commitment; the workload mix has changed, jobs have
+	migrated from the free tier into the best-effort batch tier;
+	the workload exhibits an extremely heavy-tailed distribution
+	where the top 1\% of jobs consume over 99\% of resources; and
+	there is a great deal of variation between different clusters.},
+}
+
 
 ################ 2018
 
