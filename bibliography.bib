@@ -437,6 +437,32 @@ These entries are for papers that primarily focus on some other topic, but
 use the traces as inputs, e.g., in simulations or load predictions.
 Order: most recent first.
 
+################ 2020
+
+@article{clusterdata:Milocco2020,
+  title = {Evaluating the Upper Bound of Energy Cost Saving by Proactive Data Center Management},
+  journal = {IEEE Transactions on Network and Service Management},  
+  year = 2020,  
+  issn = {1932-4537},
+  doi = {10.1109/TNSM.2020.2988346},
+  url = {https://ieeexplore.ieee.org/abstract/document/9069318},
+  author = {Ruben Milocco and Pascale Minet and Éric Renault and Selma Boumerdassi},  
+  keywords = {Data center management, Proactive management, Machine Learning, Prediction, Energy cost},
+  abstract = {
+	Data Centers (DCs) need to periodically configure their servers in order to meet user demands.
+	Since appropriate proactive management to meet demands reduces the cost, either by improving Quality of 
+	Service (QoS) or saving energy, there is a great interest in studying different proactive strategies 
+	based on predictions of the energy used to serve CPU and memory requests. The amount of savings that can 
+	be achieved depends not only on the selected proactive strategy but also on user-demand statistics and the 
+	predictors used. Despite its importance, it is difficult to find theoretical studies that quantify the 
+	savings that can be made, due to the problem complexity. A proactive DC management strategy is presented 
+	together with its upper bound of energy cost savings obtained with respect to a purely reactive management. 
+	Using this method together with records of the recent past, it is possible to quantify the efficiency of 
+	different predictors. Both linear and nonlinear predictors are studied, using a Google data set collected 
+	over 29 days, to evaluate the benefits that can be obtained with these two predictors.},
+}
+
+
 ################ 2018
 
 @article{clusterdata:Sliwko2018,
@@ -492,6 +518,50 @@ abstract={This paper presents a detailed design of a decentralised agent-based
   doi = {10.1109/CLUSTER.2018.00054},
 }
 
+@inproceedings{clusterdata:Minet2018j,
+  author = {Pascale Minet and Éric Renault and Ines Khoufi and Selma Boumerdassi},
+  title = {Analyzing Traces from a {Google} Data Center},
+  booktitle = {14th International Wireless Communications and Mobile Computing Conference (IWCMC 2018)},
+  year = 2018,
+  month = Jun,
+  publisher = {IEEE},
+  address = {Limassol, Cyprus},
+  pages = {1167--1172},
+  url = {https://doi.org/10.1109/IWCMC.2018.8450304},
+  doi = {10.1109/IWCMC.2018.8450304},
+  abstract = {
+	Traces collected from an operational Google data center over 29 days represent a very rich
+	and useful source of information for understanding the main features of a data center. In this
+	paper, we characterize the strong heterogeneity of jobs and the medium heterogeneity of machine
+	configurations. We analyze the off-periods of machines. We study the distribution of jobs per
+	category, per scheduling class, per priority and per number of tasks. The distribution of job
+	execution durations shows a high disparity, as does the job waiting time before being scheduled.
+	The resource requests in terms of CPU and memory are also analyzed. The distribution of these
+	parameter values is very useful to develop accurate models and algorithms for resource allocation
+	in data centers.},
+  keywords = {Data analysis, data center, big data application, resource allocation, scheduling},
+}
+
+@inproceedings{clusterdata:Minet2018m,
+  author = {Pascale Minet and Éric Renault and Ines Khoufi and Selma Boumerdassi},
+  title = {Data Analysis of a {Google} Data Center},
+  booktitle = {18th IEEE/ACM International Symposium on Cluster, Cloud and Grid Computing (CCGRID 2018)},
+  year = 2018,
+  month = May,
+  publisher = {IEEE},
+  address = {Washington DC, USA},
+  pages = {342--343},
+  url = {https://doi.org/10.1109/CCGRID.2018.00049},
+  doi = {10.1109/CCGRID.2018.00049},
+  abstract = {
+	Data collected from an operational Google data center during 29 days represent a very rich
+	and very useful source of information for understanding the main features of a data center.
+	In this paper, we highlight the strong heterogeneity of jobs. The distribution of job execution
+	duration shows a high disparity, as well as the job waiting time before being scheduled. The
+	resource requests in terms of CPU and memory are also analyzed. The knowledge of all these features
+	is needed to design models of jobs, machines and resource requests that are representative of a
+	real data center.},
+}
 
 @ARTICLE{clusterdata:Sebastio2018b,
   author = {Stefano Sebastio and Rahul Ghosh and Tridib Mukherjee},
