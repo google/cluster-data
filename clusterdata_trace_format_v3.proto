@@ -140,7 +140,7 @@ message InstanceEvent {
   // Common fields shared between instances and collections.
 
   // Timestamp, in microseconds since the start of the trace.
-  optional uint64 time = 1;
+  optional int64 time = 1;
   // What type of event is this?
   optional EventType type = 2;
   // The identity of the collection that this instance is part of.
@@ -177,7 +177,7 @@ message CollectionEvent {
   // Common fields shared between instances and collections.
 
   // Timestamp, in microseconds since the start of the trace.
-  optional uint64 time = 1;
+  optional int64 time = 1;
   // What type of event is this?
   optional EventType type = 2;
   // The identity of the collection.
@@ -195,6 +195,7 @@ message CollectionEvent {
   optional int64 alloc_collection_id = 8;
 
   // Fields specific to a collection.
+
   // The user who runs the collection
   optional string user = 9;
   // Obfuscated name of the collection.
@@ -243,7 +244,7 @@ message MachineEvent {
   }
 
   // Timestamp, in microseconds since the start of the trace. [key]
-  optional uint64 time = 1;
+  optional int64 time = 1;
   // Unique ID of the machine within the cluster. [key]
   optional int64 machine_id = 2;
   // Specifies the type of event
@@ -263,7 +264,7 @@ message MachineEvent {
 // A machine attribute update or (if time = 0) its initial value.
 message MachineAttribute {
   // Timestamp, in microseconds since the start of the trace. [key]
-  optional uint64 time = 1;
+  optional int64 time = 1;
   // Unique ID of the machine within the cluster. [key]
   optional int64 machine_id = 2;
   // Obfuscated unique name of the attribute (unique across all clusters). [key]
@@ -279,8 +280,8 @@ message MachineAttribute {
 // and/or ended during a measurement window).
 message InstanceUsage {
   // Sample window end points, in microseconds since the start of the trace.
-  optional uint64 start_time = 1;
-  optional uint64 end_time = 2;
+  optional int64 start_time = 1;
+  optional int64 end_time = 2;
   // ID of collection that this instance belongs to.
   optional int64 collection_id = 3;
   // Index of this instance's position in that collection (starts at 0).
