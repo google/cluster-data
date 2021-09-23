@@ -16,7 +16,7 @@ the datacenter is in that timezone (US Eastern).  This corresponds to a trace
 timestamp of 600s; see the data schema documentation for why.
 
 The trace is described in the trace-data
-[v2.1 format + schema document](https://drive.google.com/open?id=0B5g07T_gRDg9Z0lsSTEtTWtpOW8&authuser=0).
+[v2.1 format + schema document](https://drive.google.com/file/d/0B5g07T_gRDg9Z0lsSTEtTWtpOW8/view?usp=sharing&resourcekey=0-cozD56gA4fUDdrkHnLJSrQ).
 
 Priorities in this trace range from 0 to 11 inclusive; bigger numbers mean "more
 important". 0 and 1 are “free” priorities; 9, 10, and 11 are “production”
@@ -37,7 +37,7 @@ By downloading it or using them, you agree to the terms of this license.
 ## Downloading the trace
 
 Download instructions for the trace are in the
-[v2.1 format + schema document](https://drive.google.com/open?id=0B5g07T_gRDg9Z0lsSTEtTWtpOW8&authuser=0).
+[v2.1 format + schema document](https://drive.google.com/file/d/0B5g07T_gRDg9Z0lsSTEtTWtpOW8/view?usp=sharing&resourcekey=0-cozD56gA4fUDdrkHnLJSrQ).
 
 The trace is stored in
 [Google Storage for Developers](https://developers.google.com/storage/) in the
