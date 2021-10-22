@@ -176,6 +176,79 @@ Order: most recent first.
 If you just want one citation about the Cluster2011 trace, then
 use \cite{clusterdata:Reiss2012b}.
 
+
+
+################ 2022
+@inproceedings {clusterdata:jajooSLearn2022,
+author = {Akshay Jajoo and Y. Charlie Hu and Xiaojun Lin and Nan Deng},
+title = {A Case for Task Sampling based Learning for Cluster Job Scheduling},
+booktitle = {19th USENIX Symposium on Networked Systems Design and Implementation (NSDI 22)},
+year = {2022},
+address = {Renton, WA, USA},
+url = {https://www.usenix.org/conference/nsdi22/presentation/jajoo},
+publisher = {USENIX Association},
+keywords = {data centers, big data, job scheduling, learning, online learning},
+abstract = {The ability to accurately estimate job runtime properties allows a
+  scheduler to effectively schedule jobs. State-of-the-art online cluster job 
+  schedulers use history-based learning, which uses past job execution information 
+  to estimate the runtime properties of newly arrived jobs. However, with fast-paced
+  development in cluster technology (in both hardware and software) and changing user
+  inputs, job runtime properties can change over time, which lead to inaccurate predictions.
+  In this paper, we explore the potential and limitation of real-time learning of job 
+  runtime properties, by proactively sampling and scheduling a small fraction of the
+  tasks of each job. Such a task-sampling-based approach exploits the similarity among
+  runtime properties of the tasks of the same job and is inherently immune to changing
+  job behavior. Our study focuses on two key questions in comparing task-sampling-based
+  learning (learning in space) and history-based learning (learning in time): (1) Can
+  learning in space be more accurate than learning in time? (2) If so, can delaying
+  scheduling the remaining tasks of a job till the completion of sampled tasks be more
+  than compensated by the improved accuracy and result in improved job performance? Our
+  analytical and experimental analysis of 3 production traces with different skew and job
+  distribution shows that learning in space can be substantially more accurate. Our 
+  simulation and testbed evaluation on Azure of the two learning approaches anchored in a
+  generic job scheduler using 3 production cluster job traces shows that despite its online
+  overhead, learning in space reduces the average Job Completion Time (JCT) by 1.28x, 1.56x,
+  and 1.32x compared to the prior-art history-based predictor.},
+}
+
+
+################ 2021
+@article{clusterdata:jajooSLearnTechReport2021,
+  author    = {Akshay Jajoo and Y. Charlie Hu and Xiaojun Lin and Nan Deng},
+  title     = {The Case for Task Sampling based Learning for Cluster Job Scheduling},
+  journal   = {Computing Research Repository},
+  volume    = {abs/2108.10464},
+  year      = {2021},
+  url       = {https://arxiv.org/abs/2108.10464},
+  eprinttype = {arXiv},
+  eprint    = {2108.10464},
+  timestamp = {Fri, 27 Aug 2021 15:02:29 +0200},
+  biburl    = {https://dblp.org/rec/journals/corr/abs-2108-10464.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  keywords = {data centers, big data, job scheduling, learning, online learning},
+  abstract = {The ability to accurately estimate job runtime properties allows a
+    scheduler to effectively schedule jobs. State-of-the-art online cluster job 
+    schedulers use history-based learning, which uses past job execution information 
+    to estimate the runtime properties of newly arrived jobs. However, with fast-paced
+    development in cluster technology (in both hardware and software) and changing user
+    inputs, job runtime properties can change over time, which lead to inaccurate predictions.
+    In this paper, we explore the potential and limitation of real-time learning of job 
+    runtime properties, by proactively sampling and scheduling a small fraction of the
+    tasks of each job. Such a task-sampling-based approach exploits the similarity among
+    runtime properties of the tasks of the same job and is inherently immune to changing
+    job behavior. Our study focuses on two key questions in comparing task-sampling-based
+    learning (learning in space) and history-based learning (learning in time): (1) Can
+    learning in space be more accurate than learning in time? (2) If so, can delaying
+    scheduling the remaining tasks of a job till the completion of sampled tasks be more
+    than compensated by the improved accuracy and result in improved job performance? Our
+    analytical and experimental analysis of 3 production traces with different skew and job
+    distribution shows that learning in space can be substantially more accurate. Our 
+    simulation and testbed evaluation on Azure of the two learning approaches anchored in a
+    generic job scheduler using 3 production cluster job traces shows that despite its online
+    overhead, learning in space reduces the average Job Completion Time (JCT) by 1.28x, 1.56x,
+    and 1.32x compared to the prior-art history-based predictor.},
+}
+
 ################ 2020
 
 @inproceedings{clusterdata:Tirmazi2020,
