@@ -617,6 +617,35 @@ These entries are for papers that primarily focus on some other topic, but
 use the traces as inputs, e.g., in simulations or load predictions.
 Order: most recent first.
 
+################ 2023
+@ARTICLE{clusterdata:jajooSLearn2023,
+  author={Jajoo, Akshay and Hu, Y. Charlie and Lin, Xiaojun and Deng, Nan},
+  journal={IEEE Transactions on Cloud Computing}, 
+  title={SLearn: A Case for Task Sampling Based Learning for Cluster Job Scheduling}, 
+  year={2023},
+  volume={11},
+  number={3},
+  pages={2664-2680},
+  keywords={Runtime;Task analysis;Schedules;Resource management;History;Cloud computing;Production;Distributed systems;
+  scheduling and task partitioning;cluster scheduling;online learning;sampling-based learning;distributed applications;
+  data-parallel applications;big data applications},
+  abstact={The ability to accurately estimate job runtime properties allows a scheduler to effectively schedule jobs. 
+  State-of-the-art online cluster job schedulers use history-based learning, which uses past job execution information 
+  to estimate the runtime properties of newly arrived jobs. However, with fast-paced development in cluster technology 
+  (in both hardware and software) and changing user inputs, job runtime properties can change over time, which lead to 
+  inaccurate predictions. In this article, we explore the potential and limitation of real-time learning of job runtime 
+  properties, by proactively sampling and scheduling a small fraction of the tasks of each job. Such a task-sampling-based 
+  approach exploits the similarity among runtime properties of the tasks of the same job and is inherently immune to changing
+  job behavior. Our analytical and experimental analysis of 3 production traces with different skew and job distribution shows
+  that learning in space can be substantially more accurate. Our simulation and testbed evaluation on Azure of the two learning
+  approaches anchored in a generic job scheduler using 3 production cluster job traces shows that despite its online overhead,
+  learning in space reduces the average Job Completion Time (JCT) by 1.28×, 1.56×, and 1.32× compared to the prior-art 
+  history-based predictor. We further analyze the experimental results to give intuitive explanations to why learning in space
+  outperforms learning in time in these experiments. Finally, we show how sampling-based learning can be extended to schedule 
+  DAG jobs and achieve similar speedups over the prior-art history-based predictor.}
+  doi={10.1109/TCC.2022.3222649}}
+
+
 ################ 2020
 
 @INPROCEEDINGS{clusterdata:Lin2020,
