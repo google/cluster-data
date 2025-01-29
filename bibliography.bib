@@ -177,6 +177,32 @@ If you just want one citation about the Cluster2011 trace, then
 use \cite{clusterdata:Reiss2012b}.
 
 
+################ 2024
+@article{clusterdata:Sliwko2024,
+  author = {Sliwko, Leszek},
+  title = {Cluster Workload Allocation: A Predictive Approach Leveraging Machine Learning Efficiency},
+  year = 2024,
+  month = Dec,
+  journal = {IEEE Access},
+  volume = 12,
+  pages = {194091--194107},
+  doi = {10.1109/ACCESS.2024.3520422},
+  issn = {2169-3536},
+  url = {https://ieeexplore.ieee.org/document/10807210},
+  keywords = {Machine learning;classification algorithms;load balancing and task assignment;Google Cluster Data},
+  abstract = {This research investigates how Machine Learning (ML) algorithms can assist in workload allocation
+   strategies by detecting tasks with node affinity operators (referred to as constraint operators), which constrain
+   their execution to a limited number of nodes. Using real-world Google Cluster Data (GCD) workload traces and
+   the AGOCS framework, the study extracts node attributes and task constraints, then analyses them to identify suitable
+   node-task pairings. It focuses on tasks that can be executed on either a single node or fewer than a thousand out of
+   12.5k nodes in the analysed GCD cluster. Task constraint operators are compacted, pre-processed with one-hot
+   encoding,and used as features in a training dataset. Various ML classifiers, including Artificial Neural Networks,
+   K-Nearest Neighbours, Decision Trees, Naive Bayes, Ridge Regression, Adaptive Boosting, and Bagging, are fine-tuned
+   and assessed for accuracy and F1-scores. The final ensemble voting classifier model achieved 98\% accuracy and a
+   1.5-1.8\% misclassification rate for tasks with a single suitable node.}
+}
+
+
 ################ 2023
 @INPROCEEDINGS{clusterdata:Tuns2023,
   author = {Tuns, Adrian-Ioan and Spătaru, Adrian},
