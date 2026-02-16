@@ -45,7 +45,7 @@ bucket called `clusterdata-2011-2`. The total size of the compressed trace is
 approximately 41GB.
 
 Most users should use the
-[gsutil](https://developers.google.com/storage/docs/gsutil) command-line tool to
+[gcloud storage](https://docs.cloud.google.com/sdk/docs/install-sdk) command-line tool to
 download the trace data.
 
 
