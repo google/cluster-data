@@ -691,6 +691,128 @@ These entries are for papers that primarily focus on some other topic, but
 use the traces as inputs, e.g., in simulations or load predictions.
 Order: most recent first.
 
+
+################ 2026
+@article{clusterdata:Yildiz2026,
+  author = {Mert Yildiz and Alexey Rolich and Andrea Baiocchi},
+  title = {Dispatching policies in data center clusters: Insights from {Google} and {Alibaba} workloads},
+  journal = {Performance Evaluation},
+  volume = 172,
+  pages = {102551},
+  year = 2026,
+  issn = {0166-5316},
+  doi = {https://doi.org/10.1016/j.peva.2026.102551},
+  url = {https://www.sciencedirect.com/science/article/pii/S0166531626000118},
+  keywords = {Dispatching, Scheduling, Data center, Realistic workload, Cloud computing,
+   Parallel scheduling, Join-Idle-Queue},
+  abstract = {Dispatching policies shape delay and throughput in multi-server data centers,
+   yet the fidelity of classical queueing models under production workloads remains unclear.
+   We combine analytical modeling with trace-driven simulation to reassess Round Robin (RR),
+   Join-Idle-Queue (JIQ), and Least-Work-Left (LWL) using job-level and task-level views of
+   Google ClusterData v3 and Alibaba Cluster Trace v2018. Under controlled Poisson arrivals
+   with Weibull service times, the analytical models match the simulation closely. We then
+   examine model-trace discrepancies through controlled manipulations: shuffling inter-arrival
+   times, replacing arrivals with a Poisson process, shuffling task CPU times, and trimming
+   the top 0.1\% of service demands. Hidden dependence and rare very large jobs explain most
+   gaps; when both sequences are randomized and outliers removed, job-level predictions align
+   with simulation. At the task level, where jobs decompose into independently dispatched tasks,
+   policy ordering may change: in a production trace case, JIQ often matches or surpasses LWL,
+   while RR remains weakest. We also introduce a simple analytical approximation for JIQ that
+   is easy to evaluate and accurate in the controlled setting. Overall, the study clarifies
+   when analytical models hold, identifies workload features that break them, and informs
+   dispatcher choice under production conditions.}}
+
+################ 2025
+@INPROCEEDINGS{clusterdata:Yildiz2025c,
+  author = {Mert Yildiz and Alexey Rolich and Andrea Baiocchi},
+  title = {``Two-Stagification'': Job Dispatching in Large-Scale Clusters via a Two-Stage Architecture},
+  booktitle = {2025 23rd Mediterranean Communication and Computer Networking Conference (MedComNet)},
+  year = 2025,
+  month = Jun,
+  pages = {1--6},
+  doi = {10.1109/MedComNet65822.2025.11103543},
+  issn = {2996-4261},
+  url = {https://ieeexplore.ieee.org/document/11103543},
+  keywords = {Data centers, Dispatching, Scheduling, Multiple parallel servers, Real-world workload,
+   Large-Scale multi-server system, Workload traffic measurements},
+  abstract = {A continuing effort is devoted to devising effective dispatching policies for clusters of
+   First Come First Served servers. Although the optimal solution for dispatchers aware of both job size
+   and server state remains elusive, lower bounds and strong heuristics are known. In this paper, we
+   introduce a two-stage cluster architecture that applies classical Round Robin, Join Idle Queue, and
+   Least Work Left dispatching schemes, coupled with an optimized service-time threshold to separate
+   large jobs from shorter ones. Using both synthetic (Weibull) workloads and real Google data center
+   traces, we demonstrate that our two-stage approach greatly improves upon the corresponding single-stage
+   policies and closely approaches the performance of advanced size-and state-aware methods.}}
+
+@INPROCEEDINGS{clusterdata:Yildiz2025b,
+  author = {Mert Yildiz and Alexey Rolich and Andrea Baiocchi},
+  title = {Dispatching Odyssey: Exploring Performance in Computing Clusters under Real-world Workloads},
+  booktitle = {2025 36th International Teletraffic Congress (ITC-36)},
+  year = 2025,
+  month = Jun,
+  pages = {1--9},
+  doi = {10.23919/ITC-3665175.2025.11078624},
+  issn = {2835-6446},
+  url = {https://ieeexplore.ieee.org/document/11078624},
+  keywords = {Dispatching, Scheduling, Multiple parallel servers, Real-world workload},
+  abstract = {Recent workload measurements in Google data centers provide an opportunity to challenge
+   existing models and, more broadly, to enhance the understanding of dispatching policies in computing
+   clusters. Through extensive data-driven simulations, we aim to highlight the key features of workload
+   traffic traces that influence response time performance under simple yet representative dispatching
+   policies. For a given computational power budget, we vary the cluster size, i.e., the number of
+   available servers. A job-level analysis reveals that Join Idle Queue (JIQ) and Least Work Left (LWL)
+   exhibit an optimal working point for a fixed utilization coefficient as the number of servers is varied,
+   whereas Round Robin (RR) demonstrates monotonously worsening performance. Additionally, we explore the
+   accuracy of simple G/G queue approximations. When decomposing jobs into tasks, interesting results
+   emerge; notably, the simpler, non-size-based policy JIQ appears to outperform the more powerful
+   size-based LWL policy. Complementing these findings, we present preliminary results on a two-stage
+   scheduling approach that partitions tasks based on service thresholds, illustrating that modest
+   architectural modifications can further enhance performance under realistic workload conditions.},
+}
+
+@INPROCEEDINGS{clusterdata:Yildiz2025a,
+  author = {Mert Yildiz and Alexey Rolich and Andrea Baiocchi},
+  title = {The Merit of Simple Policies: Buying Performance With Parallelism and System Architecture},
+  booktitle = {IEEE INFOCOM 2025 - IEEE Conference on Computer Communications Workshops (INFOCOM WKSHPS)},
+  year = 2025,
+  month = May,
+  pages = {1--6},
+  doi = {10.1109/INFOCOMWKSHPS65812.2025.11152765},
+  issn = {2833-0587},
+  url = {https://ieeexplore.ieee.org/document/11152765},
+  keywords = {Data centers, Scheduling, Dispatching, Large-Scale multi-server system,
+   Workload traffic measurements},
+  abstract = {While scheduling and dispatching of computational workloads is a well-investigated subject,
+   only recently has Google provided publicly a vast high-resolution measurement dataset of its cloud
+   workloads. We revisit dispatching and scheduling algorithms fed by traffic workloads derived from those
+   measurements. The main finding is that mean job response time attains a minimum as the number of servers
+   of the computing cluster is varied, under the constraint that the overall computational budget is kept
+   constant. Moreover, simple policies, such as Join Idle Queue, appear to attain the same performance as
+   more complex, size-based policies for suitably high degrees of parallelism. Further, better performance,
+   definitely outperforming size-based dispatching policies, is obtained by using multistage server clusters,
+   even using very simple policies such as Round Robin.}}
+
+
+################ 2024
+@INPROCEEDINGS{clusterdata:Yildiz2024,
+  author = {Mert Yildiz and Andrea Baiocchi},
+  title = {Data-Driven Workload Generation Based on {Google} Data Center Measurements},
+  booktitle = {2024 IEEE 25th International Conference on High Performance Switching and Routing (HPSR)},
+  year = 2024,
+  month = Jul,
+  pages = {143--148},
+  doi = {10.1109/HPSR62440.2024.10635925},
+  issn = {2325-5609},
+  url = {https://ieeexplore.ieee.org/document/10635925},
+  keywords = {Workload modeling, data centers, traffic measurements, data fitting, large server clusters},
+  abstract = {A large dataset of workload measurements has been released by Google. The wealth of disclosed
+   data allows a deep dive into real workload patterns. With the aim of providing tools to generate realistic
+   workloads in a simple way, we have extracted from Google's dataset job arrival times, number of tasks per
+   job, required computation time, and memory of tasks. We define a statistical fitting of the relevant
+   probability distribution, providing a simple tool to build artificial workload traces that mimic real
+   traffic as represented by Google measurements. The workload generation algorithm is assessed by comparison
+   of its mean response time on a test dispatching/scheduling system against the real traffic traces.}}
+
 ################ 2023
 @ARTICLE{clusterdata:jajooSLearnTCC2023,
   author={Jajoo, Akshay and Hu, Y. Charlie and Lin, Xiaojun and Deng, Nan},
