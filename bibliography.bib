@@ -691,6 +691,122 @@ These entries are for papers that primarily focus on some other topic, but
 use the traces as inputs, e.g., in simulations or load predictions.
 Order: most recent first.
 
+################ 2026
+
+@article{clusterdata:baccelli2026,
+  author       = {Baccelli, Fran\c{c}ois and Olliaro, Diletta and Ajmone Marsan, Marco and Marin, Andrea},
+  journal      = {Proc. ACM Meas. Anal. Comput. Syst.}, 
+  title        = {The Multiserver-Job Stochastic Recurrence Equation for Cloud Computing Performance Evaluation},
+  year         = {2026},
+  volume       = {10},
+  number       = {1},
+  pages        = {1--25},
+  publisher    = {Association for Computing Machinery},
+  keywords = {multiserver-job queue, stochastic recurrence equation, loynes' theorem, perfect sample, coupling from the past, subadditive ergodic theorem, monotone-separable network, numerical analysis, cloud computing, data center},
+  abstract = {Cloud computing data centers handle highly variable workloads: job resource requirements can range from just one or few cores to thousands, and job service times can range from milliseconds to hours or days. This variability significantly limits the maximum achievable utilization of infrastructures. Queuing theory has addressed the study of these systems with the definition of the Multiserver-Job Queuing Model (MJQM), where s identical servers are present and job n requires αn of the s servers for a random amount of time σn. The αn servers are occupied and released simultaneously. Unfortunately, despite its simple formulation, the MJQM remains elusive. For example, the MJQM stability condition has been derived only in particular cases. As a consequence, even applying Discrete-Event Simulation (DES) under high load becomes challenging, because stability cannot be determined a priori. In this paper, we analyze the MJQM with general independent arrival processes and service times under FCFS scheduling, using stochastic recurrence equations (SREs) and ergodic theory. Starting from the definition of the MJQM SRE, we prove the monotonicity and separability properties that allow us to apply an extension of Loynes' theorem, known as the monotone-separable framework, and formally define the MJQM stability condition. From these results, we introduce and implement two algorithms: the first one is used to draw sub-perfect samples (SPS) of the system's workload and the second one estimates the system's stability condition given the statistics of the jobs' input stream. The nature of the SPS algorithm allows for a massive GPU parallelization, thus greatly improving the efficiency in the estimation of performance metrics. The algorithm for the estimation of the stability condition solves an important problem for the analysis of MJQMs. We also define new metrics that capture the synchronization loss in MJQM systems and we show how these metrics can be efficiently evaluated using the SRE approach. Finally, we show that the approach proposed in this paper can be extended to more complicated systems, including MJQMs where resources have types.},
+  doi          = {10.1145/3788105}
+}
+
+@article{clusterdata:chen2026,
+  author       = {Zhongrui Chen and Adityo Anggraito and Diletta Olliaro and Andrea Marin and Marco Ajmone Marsan and Benjamin Berg and Isaac Grosof},
+  journal      = {Perform. Evaluation},
+  title        = {Improving nonpreemptive multiserver job scheduling with quickswap},
+  year         = {2026},
+  volume       = {171},
+  pages        = {102525},
+  publisher    = {Elsevier},
+  keywords     = {Scheduling, Queueing theory, Cluster scheduling, Multiserver jobs, Multiresource jobs},
+  abstract     = {Modern data center workloads are composed of multiserver jobs, computational jobs that require multiple servers in order to run. A data center can run many multiserver jobs in parallel, as long as it has sufficient resources to meet their individual demands. Multiserver jobs are generally stateful, meaning that job preemptions incur significant overhead from saving and reloading the state associated with running jobs. Hence, most systems try to avoid these costly job preemptions altogether. Given these constraints, a scheduling policy must determine what set of jobs to run in parallel at each moment in time to minimize the mean response time across a stream of arriving jobs. Unfortunately, simple non-preemptive policies such as First-Come First-Served (FCFS) may leave many servers idle, resulting in high mean response times or even system instability. Our goal is to design and analyze non-preemptive scheduling policies for multiserver jobs that maintain high system utilization to achieve low mean response time. One well-known non-preemptive scheduling policy, Most Servers First (MSF), prioritizes jobs with higher server needs and is known for achieving high resource utilization. However, MSF causes extreme variability in job waiting times, and can perform significantly worse than FCFS in practice. To address this issue, we propose and analyze a class of scheduling policies called Most Servers First with Quickswap (MSFQ) that performs well in a wide variety of cases. MSFQ reduces the variability of job waiting times by periodically granting priority to other jobs in the system. We provide both stability results and an analysis of mean response time under MSFQ to prove that our policy dramatically outperforms MSF in the case where jobs either request one server or all the servers. In more complex cases, we evaluate MSFQ in simulation. We show that, with some additional optimization, variants of the MSFQ policy can greatly outperform MSF and FCFS on real-world multiserver job workloads.},
+  doi          = {10.1016/J.PEVA.2025.102525}
+}
+
+@article{clusterdata:olliaro2026,
+  author       = {Diletta Olliaro and Sabina Rossi and Adityo Anggraito and Andrea Marin and
+                  Marco Ajmone Marsan},
+  journal      = {{IEEE} Trans. Parallel Distributed Syst.},
+  title        = {On the Performance of {SMASH:} {A} Non-Preemptive Window-Based Scheduler
+                  for Multiserver Jobs},
+  year         = {2026},
+  volume       = {37},
+  number       = {4},
+  pages        = {966--981},
+  publisher    = {IEEE},
+  keywords     = {Data center, performance evaluation, queuing policy, analytical model, data driven simulation, multiserver job queuing model},
+  abstract     = {The efficient execution of data center jobs that require simultaneous use of different resource types is of critical importance. When processing capacity is the crucial resource for jobs execution, the locution multiserver jobs is used, where the term server indicates processors or CPU cores providing processing capacity. Each multiserver job carries a requirement expressed in number of servers it requires to run, and service duration. Achieving efficient execution of multiserver jobs relies heavily on effective scheduling of jobs on the existing servers. Several schedulers have been proposed, aimed at improving resource utilization, at the cost of increased complexity. Due to the limited availability of theoretical results on scheduler behavior in the case of multiserver jobs, data center schedulers are often designed based only on managers’ experience. In this article, aiming to expand the understanding of the multiserver job schedulers’ performance, we study Small Shuffle (SMASH) schedulers, a class of nonpreemptive, service time oblivious, window-based multiserver job scheduling algorithms that strike a balance between simplicity and efficient resource utilization, while allowing performance evaluation in simpler settings. SMASH implies only a marginal increase in complexity compared to FIFO, yet it delivers substantial performance improvements for multiserver jobs. Depending on the system parameters, SMASH can nearly double the system’s stability region with respect to FIFO, leading to significantly lower response times across a broad region of loads. Moreover, the magnitude of this improvement scales with the chosen window size, allowing performance to be tuned to the system’s operating conditions. We first study the capacity of SMASH with analytical tools in simple settings, then we investigate the performance of SMASH and other schedulers with simulations under more realistic workloads, designed with parameters derived from measurements of real data centers. Results show that SMASH offers a very good compromise between performance and complexity.},
+  doi          = {10.1109/TPDS.2026.3657959}
+}
+
+################ 2025
+
+@article{clusterdata:anggraito2025,
+  author = {Adityo Anggraito and Diletta Olliaro and Marco {Ajmone Marsan} and Andrea Marin},
+  journal = {Performance Evaluation},
+  title = {The Multiserver Job Queuing Model with big and small jobs: Stability in the case of infinite servers},
+  year = {2025},
+  volume = {168},
+  pages = {102477},
+  publisher = {Elsevier},
+  keywords = {Multiserver Job Queuing Model, Stability region, Extreme value theory},
+  abstract = {The Multiserver Job Queuing Model (MJQM) is a queuing system that plays a key role in the study of the dynamics of resource allocation in data centers. The MJQM comprises a waiting line with infinite capacity and a large number of servers. In this paper, we look at the limiting case in which the number of servers is infinite. Jobs are termed “multiserver” because each one is characterized by a resource demand in terms of number of simultaneously used servers and by a service duration. Job classes are defined by collecting all jobs that require the same number of servers. Job service times are independent and identically distributed random variables whose distributions depend on the class of the job. We consider the case of only two job classes: “small” jobs use a fixed number of servers, while “big” jobs use all servers in the system. The service discipline is First-In First-Out (FIFO). This means that if the job at the Head-of-Line (HOL) cannot enter service because the number of free servers is not sufficient to meet the job requirement, it blocks all subsequent jobs, even if there are sufficient free servers for them. Despite its importance, only few results exist for the MJQM, whose analysis is challenging, especially because the MJQM is not work-conserving. This implies that even the stability region of the MJQM is known only in special cases. In a previous work, we obtained a closed-form stability condition for MJQM with big and small jobs under the assumption of exponentially distributed service times for small jobs. In this paper, we compute the stability condition of MJQM with an infinite number of servers processing big and small jobs, considering different distributions of the service times of small jobs. Simulations are used to support the analytical results and to investigate the impact of service time distributions on the average job waiting time before saturation.},
+  doi = {https://doi.org/10.1016/j.peva.2025.102477},
+}
+}
+
+@article{clusterdata:anggraito2025b,
+  author = {Adityo Anggraito and Diletta Olliaro and Andrea Marin and Marco Ajmone Marsan},
+  journal = {Performance Evaluation},
+  title = {The Multiserver Job Queuing Model with two job classes and Cox-2 service times},
+  year = {2025},
+  volume = {169},
+  pages = {102486},
+  publisher = {Elsevier},
+  keywords = {Multiserver Job Queuing Model, Matrix geometrics, Coxian distribution},
+  abstract = {Datacenters comprise a variety of resources (processors, memory, input/output modules, etc.) that are shared among requests for the execution of computing jobs submitted by datacenter users. Jobs differ in their frequency of arrivals, demand for resources, and execution times. Resource sharing generates contention, especially in heavily loaded systems, that must therefore implement effective scheduling policies for incoming jobs. The First-In First-Out (FIFO) policy is often used for batch jobs, but may produce under-utilization of resources, in terms of wasted servers. This is due to the fact that a job that requires many resources can block jobs arriving later that could be served because they require fewer resources. The mathematical construct often used to study this problem is the Multiserver Job Queuing Model (MJQM), where servers represent resources which are requested and used by jobs in different quantities. Unfortunately, very few explicit results are known for the MJQM, especially at realistic system loads (i.e., before saturation), and hardly any considers the case of non-exponential service time distributions. In this paper, we propose the first exact analytical model of the non-saturated MJQM in case of two classes of customers with service times having 2-phase Coxian distribution. Our analysis is based on the matrix geometric method. Our results provide insight into datacenter dynamics, thus supporting the design of more complex schedulers, capable of improving performance and energy consumption within large datacenters.},
+  doi = {https://doi.org/10.1016/j.peva.2025.102486},
+}
+
+
+@article{clusterdata:olliaro2025,
+  author       = {Diletta Olliaro and Adityo Anggraito and Marco Ajmone Marsan and Simonetta Balsamo and Andrea Marin},
+  journal      = {{IEEE} Trans. Parallel Distributed Syst.},
+  title        = {The Impact of Service Demand Variability on Data Center Performance},
+  year         = {2025},
+  volume       = {36},
+  number       = {2},
+  pages        = {120--132},
+  publisher    = {IEEE},
+  keywords     = {Data center, performance analysis, simulation, multiserver job queuing model},
+  abstract     = {Modern data centers feature an extensive array of cores that handle quite a diverse range of jobs. Recent traces, shared by leading cloud data center enterprises like Google and Alibaba, reveal that the constant increase in data center services and computational power is accompanied by a growing variability in service demand requirements. The number of cores needed for a job can vary widely, ranging from one to several thousands, and the number of seconds a core is held by a job can span more than five orders of magnitude. In this context of extreme variability, the policies governing the allocation of cores to jobs play a crucial role in the performance of data centers. It is widely acknowledged that the First-In First-Out (FIFO) policy tends to underutilize available computing capacity due to the varying magnitudes of core requests. However, the impact of the extreme variability in service demands on job waiting and response times, that has been deeply investigated in traditional queuing models, is not as well understood in the case of data centers, as we will show. To address this issue, we investigate the dynamics of a data center cluster through analytical models in simple cases, and discrete event simulations based on real data. Our findings emphasize the significant impact of service demand variability, both in terms of requested cores and service times, and allow us to provide insight for enhancing data center performance. In particular, we show how data center performance can be improved thanks to the control of the interplay between service and waiting times through the assignment of cores to jobs.},
+  doi          = {10.1109/TPDS.2024.3497792}
+}
+
+################ 2024
+
+@inproceedings{clusterdata:anggraito2024,
+  author       = {Adityo Anggraito and Diletta Olliaro and Marco Ajmone Marsan and Andrea Marin},
+  title        = {Stability Condition for the Multi-server Job Queuing Model: Sensitivity
+                  Analysis},
+  booktitle    = {Analytical and Stochastic Modelling Techniques and Applications - 28th International Conference, {ASMTA} 2024, Venice, Italy, June 14, 2024, Proceedings},
+  year         = {2024},
+  address      = {Cham},
+  url          = {https://doi.org/10.1007/978-3-031-70753-7\_10},
+  publisher    = {Springer},
+  abstract     = {A Multiserver Job Queuing Model (MJQM) is a queuing system that can be instrumental in the study of the dynamics of resource allocation in datacenters. The queue comprises a waiting line with infinite capacity and a large number of servers. In this paper, we look at the case of an infinite number of servers. Jobs are termed ``multiserver'' because each one is characterized by a resource demand in terms of number of simultaneously used servers and by a service duration. In a MJQM, jobs are clustered into classes, and a number of used servers is deterministically associated with each class. Instead, holding times are independent and identically distributed random variables whose distributions depend on the class of the job. We consider the case of just two job classes: ``small'' jobs use just one server, while ``big'' jobs use all servers in the system. The service discipline is First-Come-First-Served (FCFS). This means that if the job at the head-of-line (HOL) cannot enter service because the number of free servers is not sufficient to meet the job requirement, it blocks all subsequent jobs, even if there are sufficient free servers for them. Despite its importance, only few results exist for the MJQM, whose analysis is challenging, especially because the MJQM is not work-conserving. This implies that even the stability region of the MJQM is known only in special cases. In a previous work, we obtained a closed-form stability condition for MJQM with big and small jobs under the assumption of exponentially distributed service times for small jobs. In this paper, we compute the stability condition of MJQM with big and small jobs, with an infinite number of servers, considering different distributions of the service times of small jobs. Simulations are used to support the analytical results and to investigate the impact of service time distributions on the expected job waiting time before saturation.}
+}
+
+@inproceedings{clusterdata:anggraito2024b,
+  author       = {Adityo Anggraito and Diletta Olliaro and Andrea Marin and Marco Ajmone Marsan},
+  title        = {The Non-Saturated Multiserver Job Queuing Model with Two Job Classes:
+                  a Matrix Geometric Analysis},
+  booktitle    = {32nd International Conference on Modeling, Analysis and Simulation
+                  of Computer and Telecommunication Systems, {MASCOTS} 2024, Krakow,
+                  Poland, October 21-23, 2024},
+  year         = {2024},
+  url          = {https://doi.org/10.1109/MASCOTS64422.2024.10786546},
+  publisher    = {{IEEE}},
+  abstract     = {Datacenters comprise large quantities of processors, memory, and input/output modules. These resources are shared among requests (jobs) submitted by datacenter users. Jobs differ in their frequency of arrivals, demand for resources, and execution times. Resource sharing generates contention, especially in heavily loaded systems, that must therefore implement effective scheduling policies for incoming jobs. The First-In First-Out (FIFO) policy is often used for batch jobs, but may produce under-utilization of resources, in terms of wasted servers. This is due to the fact that a job that requires many resources can block jobs arriving later that could be served because they require fewer resources. The mathematical construct often used to study this problem is the Multiserver Job Queuing Model (MJQM), where servers represent resources which are requested and used by jobs in different quantities. Unfortunately, very few explicit results are known for the MJQM, especially at realistic system loads (i.e., before saturation). In this paper, we propose the first exact analytical model of the non-saturated MJQM in case of two classes of customers with exponentially distributed service times and an arbitrary number of identical servers. Our analysis is based on the matrix geometric method. Our results provide insight into datacenter dynamics, thus supporting the design of more complex schedulers, capable of improving performance and energy consumption within large datacenters.}
+}
+
 ################ 2023
 @ARTICLE{clusterdata:jajooSLearnTCC2023,
   author={Jajoo, Akshay and Hu, Y. Charlie and Lin, Xiaojun and Deng, Nan},
